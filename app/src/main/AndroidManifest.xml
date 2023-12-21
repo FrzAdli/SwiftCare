@@ -12,12 +12,11 @@
         android:theme="@style/Theme.SwiftCare"
         tools:targetApi="31">
         <activity
-            android:name=".SignInActivity"
-            android:exported="false" />
+            android:name=".SignUpActivity"
+            android:exported="false"/>
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

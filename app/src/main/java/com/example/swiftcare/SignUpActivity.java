@@ -4,16 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.swiftcare.databinding.ActivitySignInBinding;
+import com.example.swiftcare.databinding.ActivitySignUpBinding;
 
-public class SignInActivity extends AppCompatActivity {
-
-    ActivitySignInBinding binding;
+public class SignUpActivity extends AppCompatActivity {
+    ActivitySignUpBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySignInBinding.inflate(getLayoutInflater());
+        binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
 }
