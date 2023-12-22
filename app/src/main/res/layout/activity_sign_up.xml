@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/neutral_N10"
     tools:context=".SignUpActivity">
 
 
@@ -38,7 +39,7 @@
             android:layout_centerInParent="true"
             android:layout_marginLeft="18dp"
             android:layout_toEndOf="@+id/backButton2"
-            android:text="Back"
+            android:text="Sign up"
             android:textColor="@color/primary_600"
             android:textSize="18sp" />
 
@@ -70,10 +71,10 @@
             android:id="@+id/header_title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Daftar"
+            android:text="Sign up"
             android:layout_marginStart="26dp"
             android:textStyle="bold"
-            android:textSize="33sp"
+            android:textSize="27sp"
             android:textColor="@color/neutral_N500"
             />
         <TextView
@@ -81,19 +82,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="26dp"
-            android:text="Segera daftarkan dirimu"
-            android:textStyle="bold"
-            android:textSize="18sp"
+            android:text="Register yourself immediately"
+            android:textSize="16sp"
             android:textColor="@color/neutral_N80" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="26dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="28dp"
             android:text="Email"
             android:textColor="@color/neutral_N80"
-            android:textSize="18sp"
+            android:textSize="17sp"
             />
 
         <EditText
@@ -120,7 +120,7 @@
             android:layout_marginTop="20dp"
             android:text="Password"
             android:textColor="@color/neutral_N80"
-            android:textSize="18sp"
+            android:textSize="17sp"
             />
 
         <EditText
@@ -148,7 +148,7 @@
             android:layout_marginTop="20dp"
             android:text="Phone Number"
             android:textColor="@color/neutral_N80"
-            android:textSize="18sp"
+            android:textSize="17sp"
             />
 
         <EditText
@@ -189,8 +189,7 @@
             android:backgroundTint="@color/primary_600"
             app:cornerRadius="20dp"
             android:textAllCaps="false"
-            android:text="Daftar"
-            android:textStyle="bold"
+            android:text="Sign up"
             android:textSize="18dp"
             android:textColor="@color/white"/>
 
@@ -217,8 +216,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sudah punya akun?"
-            android:textStyle="bold"
+            android:text="Already have an account?"
             android:textSize="18sp"
             android:textColor="@color/neutral_N80"/>
 
@@ -226,12 +224,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Masuk"
-            android:textStyle="bold"
+            android:text="Sign in"
             android:textSize="18sp"
             android:textColor="@color/primary_600"/>
 
     </LinearLayout>
+
 
 
 

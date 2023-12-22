@@ -6,9 +6,13 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="neutral_N10">#FAFAFA</color>
     <color name="neutral_N20">#F5F5F5</color>
     <color name="neutral_N80">#949494</color>
     <color name="neutral_N500">#3B3B3B</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary_100">#B0FAD0</color>
     <color name="primary_600">#00DA5F</color>
+    <color name="red_D400">#B30020</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>
