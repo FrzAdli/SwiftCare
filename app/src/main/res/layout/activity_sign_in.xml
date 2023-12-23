@@ -19,7 +19,7 @@
         android:gravity="fill_horizontal">
 
         <ImageButton
-            android:id="@+id/backButton2"
+            android:id="@+id/backButtonsignin"
             android:layout_marginTop="10dp"
             android:layout_marginStart="26dp"
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="18dp"
-            android:layout_toEndOf="@+id/backButton2"
+            android:layout_toEndOf="@+id/backButtonsignin"
             android:text="Sign in"
             android:textColor="@color/primary_600"
             android:textSize="18sp" />

@@ -26,5 +26,8 @@ public class SignInActivity extends AppCompatActivity {
     private void setListener(){
         binding.layoutSignUp.setOnClickListener( v ->
                 startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
+        binding.backButtonsignin.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), CTAActivity.class));
+        });
     }
 }
