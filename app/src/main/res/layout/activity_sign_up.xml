@@ -7,8 +7,6 @@
     android:background="@color/neutral_N10"
     tools:context=".SignUpActivity">
 
-
-
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="411dp"
@@ -22,10 +20,10 @@
 
         <ImageButton
             android:id="@+id/backButtonSignUp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_6sdp"
             android:layout_marginStart="26dp"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:layout_alignParentStart="true"
             android:src="@drawable/ic_back"
             android:background="?attr/selectableItemBackgroundBorderless"
@@ -37,11 +35,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginLeft="18dp"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_toEndOf="@+id/backButtonSignUp"
+            android:fontFamily="@font/poppins_regular"
             android:text="Sign up"
             android:textColor="@color/primary_600"
-            android:textSize="18sp" />
+            android:textSize="@dimen/_14sdp" />
 
     </RelativeLayout>
 
@@ -57,7 +57,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header" />
 
-
     <LinearLayout
         android:id="@+id/textinputall"
         android:layout_width="match_parent"
@@ -66,46 +65,49 @@
         app:layout_constraintTop_toBottomOf="@+id/logoImage"
         android:orientation="vertical">
 
-
         <TextView
             android:id="@+id/header_title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign up"
-            android:layout_marginStart="26dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:layout_marginStart="@dimen/_20sdp"
             android:textStyle="bold"
-            android:textSize="27sp"
+            android:textSize="@dimen/_22sdp"
             android:textColor="@color/neutral_N500"
             />
         <TextView
             android:id="@+id/header_title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="26dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="@dimen/_20sdp"
             android:text="Register yourself immediately"
-            android:textSize="16sp"
+            android:textSize="@dimen/_13sdp"
             android:textColor="@color/neutral_N80" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_regular"
             android:text="Email"
             android:textColor="@color/neutral_N80"
-            android:textSize="17sp"
+            android:textSize="@dimen/_13sdp"
             />
 
         <EditText
             android:id="@+id/inputEmail"
-            android:layout_width="360dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginEnd="26dp"
+            android:layout_width="@dimen/_275sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:textSize="@dimen/_13sdp"
             android:layout_gravity="center"
-            android:padding="10dp"
-            android:drawablePadding="12dp"
+            android:padding="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_12sdp"
             android:drawableStart="@drawable/ic_mail"
             android:background="@drawable/edit_text_background"
             android:hint="ex. youremail@gmail.com"
@@ -117,20 +119,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_regular"
             android:text="Password"
             android:textColor="@color/neutral_N80"
-            android:textSize="17sp"
+            android:textSize="@dimen/_13sdp"
             />
 
         <EditText
             android:id="@+id/inputPassword"
-            android:layout_width="360dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginEnd="26dp"
+            android:layout_width="@dimen/_275sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
             android:layout_gravity="center"
             android:padding="10dp"
             android:drawablePadding="12dp"
@@ -146,11 +149,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_regular"
             android:text="Phone Number"
             android:textColor="@color/neutral_N80"
-            android:textSize="17sp"
+            android:textSize="@dimen/_13sdp"
             />
 
         <EditText
@@ -158,8 +162,8 @@
             android:layout_width="360dp"
             android:layout_height="50dp"
             android:layout_marginTop="4dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginEnd="26dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
             android:layout_gravity="center"
             android:padding="10dp"
             android:drawablePadding="12dp"
@@ -172,9 +176,8 @@
             android:imeOptions="actionNext"
             android:importantForAutofill="yes"/>
 
-
-
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/buttondaftar"
         android:layout_width="match_parent"
@@ -187,13 +190,14 @@
             android:id="@+id/buttonSignUp"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginEnd="26dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
             android:backgroundTint="@color/primary_600"
             app:cornerRadius="20dp"
+            android:fontFamily="@font/poppins_regular"
             android:textAllCaps="false"
             android:text="Sign up"
-            android:textSize="18dp"
+            android:textSize="@dimen/_13sdp"
             android:textColor="@color/white"/>
 
         <ProgressBar
@@ -220,20 +224,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Already have an account?"
-            android:textSize="18sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/_11sdp"
             android:textColor="@color/neutral_N80"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
+            android:fontFamily="@font/poppins_regular"
             android:text="Sign in"
-            android:textSize="18sp"
+            android:textSize="@dimen/_11sdp"
             android:textColor="@color/primary_600"/>
-
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

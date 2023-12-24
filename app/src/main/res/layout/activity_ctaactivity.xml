@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CTAActivity">
 
-
-
-
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/imageSlider"
         android:layout_width="411dp"
@@ -25,9 +22,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.111" />
 
-
-
-
     <ImageView
         android:id="@+id/mainBackgroundupper"
         android:layout_width="match_parent"
@@ -38,8 +32,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <ImageView
         android:id="@+id/mainBackgrounddown"
@@ -72,11 +64,13 @@
         android:id="@+id/welocmecta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_24sdp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:text="Welcome"
+        android:fontFamily="@font/poppins_semi_bold"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,9 +83,10 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/_9sdp"
         android:textColor="@color/neutral_N500"
+        android:fontFamily="@font/poppins_regular"
         android:text="Donate with ease, and make the world a "
-        android:layout_marginTop="@dimen/_25sdp"
-        app:layout_constraintTop_toBottomOf="@+id/welocmecta"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:layout_constraintTop_toBottomOf="@id/welocmecta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +100,8 @@
         android:textSize="@dimen/_9sdp"
         android:textColor="@color/neutral_N500"
         android:text="better place"
-        android:layout_marginTop="@dimen/_45sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="@dimen/_70sdp"
         app:layout_constraintTop_toBottomOf="@+id/ctadonate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,11 +124,12 @@
             android:layout_height="55dp"
             android:layout_marginStart="26dp"
             android:layout_marginEnd="26dp"
+            android:fontFamily="@font/poppins_regular"
             android:backgroundTint="@color/primary_600"
             app:cornerRadius="20dp"
             android:textAllCaps="false"
             android:text="Sign up"
-            android:textSize="18dp"
+            android:textSize="@dimen/_13sdp"
             android:textColor="@color/white"/>
 
         <ProgressBar
@@ -156,13 +153,14 @@
             android:id="@+id/buttonSignIn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginEnd="26dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
             android:backgroundTint="@color/primary_100"
             app:cornerRadius="20dp"
             android:textAllCaps="false"
             android:text="Sign in"
-            android:textSize="18dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/_13sdp"
             android:textColor="@color/primary_600"/>
 
         <ProgressBar
