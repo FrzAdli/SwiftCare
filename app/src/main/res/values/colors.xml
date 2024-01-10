@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="neutral_N10">#FAFAFA</color>
     <color name="neutral_N20">#F5F5F5</color>
+    <color name="neutral_N60">#B0B0B0</color>
     <color name="neutral_N80">#949494</color>
     <color name="neutral_N300">#575757</color>
     <color name="neutral_N500">#3B3B3B</color>

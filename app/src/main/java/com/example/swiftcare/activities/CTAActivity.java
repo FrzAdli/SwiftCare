@@ -1,4 +1,4 @@
-package com.example.swiftcare;
+package com.example.swiftcare.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.swiftcare.R;
 import com.example.swiftcare.databinding.ActivityCtaactivityBinding;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.swiftcare;
+package com.example.swiftcare.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.swiftcare.databinding.ActivitySignInBinding;
+import com.example.swiftcare.fragments.HomeFragment;
 
 public class SignInActivity extends AppCompatActivity {
     ActivitySignInBinding binding;
@@ -26,8 +27,10 @@ public class SignInActivity extends AppCompatActivity {
     private void setListener(){
         binding.layoutSignUp.setOnClickListener( v ->
                 startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
-        binding.backButtonsignin.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), CTAActivity.class));
-        });
+        binding.buttonSignIn1.setOnClickListener( v ->
+                startActivity(new Intent(getApplicationContext(), MainPageActivity.class)));
+        binding.backButtonsignin.setOnClickListener(v ->
+            startActivity(new Intent(getApplicationContext(), CTAActivity.class))
+        );
     }
 }

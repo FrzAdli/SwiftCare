@@ -1,10 +1,12 @@
-package com.example.swiftcare;
+package com.example.swiftcare.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.swiftcare.activities.CTAActivity;
+import com.example.swiftcare.activities.SignInActivity;
 import com.example.swiftcare.databinding.ActivitySignUpBinding;
 
 public class SignUpActivity extends AppCompatActivity {

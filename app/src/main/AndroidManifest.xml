@@ -12,16 +12,19 @@
         android:theme="@style/Theme.SwiftCare"
         tools:targetApi="31">
         <activity
-            android:name=".CTAActivity"
+            android:name=".activities.MainPageActivity"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".activities.CTAActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activities.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activities.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
