@@ -168,7 +168,7 @@
             </LinearLayout>
 
             <FrameLayout
-                android:id="@+id/buttonSignInGoogle"
+                android:id="@+id/layoutButtonSignInGoogle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -181,7 +181,7 @@
                     app:iconGravity="textStart"
                     app:iconTint="@null"
                     app:iconPadding="@dimen/_9sdp"
-                    android:id="@+id/buttonSignUp"
+                    android:id="@+id/buttonSignInGoogle"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginStart="@dimen/_20sdp"
@@ -207,15 +207,15 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/buttonSignIn"
+                android:id="@+id/layoutButtonSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                app:layout_constraintTop_toBottomOf="@+id/buttonSignInGoogle"
+                app:layout_constraintTop_toBottomOf="@+id/layoutButtonSignInGoogle"
                 android:animateLayoutChanges="true">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonSignIn1"
+                    android:id="@+id/buttonSignIn"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_marginStart="@dimen/_20sdp"
@@ -243,7 +243,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonSignIn"
+                app:layout_constraintTop_toBottomOf="@+id/layoutButtonSignIn"
                 android:layout_marginTop="8dp"
                 android:layout_gravity="center_horizontal"
                 android:orientation="horizontal">

@@ -9,19 +9,29 @@ import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.swiftcare.R;
 import com.example.swiftcare.databinding.ActivityCtaactivityBinding;
+import com.example.swiftcare.utilities.Constants;
+import com.example.swiftcare.utilities.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CTAActivity extends AppCompatActivity {
 
-    ActivityCtaactivityBinding binding;
+    private ActivityCtaactivityBinding binding;
+    private PreferenceManager preferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityCtaactivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        preferenceManager = new PreferenceManager(getApplicationContext());
+        if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
+            Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         imageSlider();
     }
