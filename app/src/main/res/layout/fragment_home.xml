@@ -85,7 +85,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_12sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_container">
+        app:layout_constraintTop_toBottomOf="@id/search_container"
+        android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_1"

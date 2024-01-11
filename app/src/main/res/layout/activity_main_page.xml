@@ -32,155 +32,155 @@
 
 
 
-    <!--suppress AndroidUnresolvableTag -->
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:paddingTop="15dp"
-        android:elevation="10dp"
-        android:gravity="center"
-        android:background="@color/white">
-
         <!--suppress AndroidUnresolvableTag -->
         <LinearLayout
-            android:id="@+id/HomeLayout"
-            android:background="@drawable/round_back_home_100"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingEnd="10dp"
+            android:weightSum="4"
+            android:paddingTop="15dp"
+            android:elevation="10dp"
             android:gravity="center"
-            android:layout_marginRight="@dimen/_16sdp"
-            android:layout_weight="1">
+            android:background="@color/white">
 
             <!--suppress AndroidUnresolvableTag -->
-            <ImageView
-                android:id="@+id/HomeIcon"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/ic_home_clean"/>
-
-            <!--suppress AndroidUnresolvableTag -->
-            <TextView
-                android:id="@+id/HomeTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:layout_marginStart="10dp"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
-
-
-        </LinearLayout>
-
-
-        <!--suppress AndroidUnresolvableTag -->
-        <LinearLayout
-            android:id="@+id/DonateLayout"
-            android:background="@drawable/bg_round_50"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_marginRight="@dimen/_16sdp"
-            android:gravity="center"
-            android:layout_weight="1">
-
-            <!--suppress AndroidUnresolvableTag -->
-            <ImageView
-                android:id="@+id/ImageDonate"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/ic_donate_green"
-                />
-
-            <!--suppress AndroidUnresolvableTag -->
-            <TextView
-                android:id="@+id/DonateTxt"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Donate"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
-
-
-        </LinearLayout>
-
-        <!--suppress AndroidUnresolvableTag -->
             <LinearLayout
-            android:id="@+id/LovelistLayout"
-            android:background="@drawable/bg_round_50"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginRight="@dimen/_16sdp"
-            android:layout_weight="1">
-
-            <!--suppress AndroidUnresolvableTag -->
-            <ImageView
-                android:id="@+id/LovelistIcon"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/ic_lovelist_green"/>
-
-            <!--suppress AndroidUnresolvableTag -->
-            <TextView
-                android:id="@+id/LovelistTxt"
-                android:visibility="gone"
+                android:id="@+id/HomeLayout"
+                android:background="@drawable/round_back_home_100"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Lovelist"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_weight="1">
+
+                <!--suppress AndroidUnresolvableTag -->
+                <ImageView
+                    android:id="@+id/HomeIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_home_clean"/>
+
+                <!--suppress AndroidUnresolvableTag -->
+                <TextView
+                    android:id="@+id/HomeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+
+
+            </LinearLayout>
+
+
+            <!--suppress AndroidUnresolvableTag -->
+            <LinearLayout
+                android:id="@+id/DonateLayout"
+                android:background="@drawable/bg_round_50"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <!--suppress AndroidUnresolvableTag -->
+                <ImageView
+                    android:id="@+id/ImageDonate"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_donate_green"
+                    />
+
+                <!--suppress AndroidUnresolvableTag -->
+                <TextView
+                    android:id="@+id/DonateTxt"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Donate"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+
+
+            </LinearLayout>
+
+            <!--suppress AndroidUnresolvableTag -->
+            <LinearLayout
+                android:id="@+id/LovelistLayout"
+                android:background="@drawable/bg_round_50"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_weight="1">
+
+                <!--suppress AndroidUnresolvableTag -->
+                <ImageView
+                    android:id="@+id/LovelistIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_lovelist_green"/>
+
+                <!--suppress AndroidUnresolvableTag -->
+                <TextView
+                    android:id="@+id/LovelistTxt"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Lovelist"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+
+
+
+            </LinearLayout>
+
+            <!--suppress AndroidUnresolvableTag -->
+            <LinearLayout
+                android:id="@+id/ProfileLayout"
+                android:background="@drawable/bg_round_50"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <!--suppress AndroidUnresolvableTag -->
+                <ImageView
+                    android:id="@+id/ProfileIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_profile_green"/>
+
+                <!--suppress AndroidUnresolvableTag -->
+                <TextView
+                    android:id="@+id/ProfileTxt"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Profile"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+
+
+            </LinearLayout>
+
 
 
 
         </LinearLayout>
-
-        <!--suppress AndroidUnresolvableTag -->
-        <LinearLayout
-            android:id="@+id/ProfileLayout"
-            android:background="@drawable/bg_round_50"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_weight="1">
-
-            <!--suppress AndroidUnresolvableTag -->
-            <ImageView
-                android:id="@+id/ProfileIcon"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/ic_profile_green"/>
-
-            <!--suppress AndroidUnresolvableTag -->
-            <TextView
-                android:id="@+id/ProfileTxt"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Profile"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
-
-
-        </LinearLayout>
-
-
-
-
-    </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
