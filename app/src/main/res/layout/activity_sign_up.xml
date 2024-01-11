@@ -201,7 +201,7 @@
             android:textColor="@color/white"/>
 
         <ProgressBar
-            android:id="@+id/progessBar"
+            android:id="@+id/progressBar"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center"
