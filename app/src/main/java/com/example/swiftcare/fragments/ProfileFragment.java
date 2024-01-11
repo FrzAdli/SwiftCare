@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.swiftcare.R;
 import com.example.swiftcare.activities.SignInActivity;
 import com.example.swiftcare.databinding.FragmentProfileBinding;
+import com.example.swiftcare.utilities.PreferenceManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -30,6 +31,7 @@ public class ProfileFragment extends Fragment {
     FragmentProfileBinding binding;
     private GoogleSignInClient gClient;
     private GoogleSignInOptions gOptions;
+    PreferenceManager preferenceManager;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,6 +79,7 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         gOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gClient = GoogleSignIn.getClient(requireContext(), gOptions);
+        preferenceManager = new PreferenceManager(requireContext());
         return binding.getRoot();
 
     }
@@ -88,7 +91,10 @@ public class ProfileFragment extends Fragment {
             gClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    startActivity(new Intent(requireActivity(), SignInActivity.class));
+                    preferenceManager.clear();
+                    Intent i = new Intent(requireActivity(), SignInActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(i);
                 }
             });
         });
