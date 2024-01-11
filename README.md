@@ -22,7 +22,7 @@ Our application aims to address this challenge by providing a user-friendly plat
 <!-- ABOUT Team-->
 ## SwiftCare Production Team
 SwiftCare was built by the vocdev team consisting of:
-* <a href="https://github.com/setiadyanwar" style="color: black; text-decoration: none;">Setiady Ibrahim Anwar - Hipster</a>
-* <a href="https://github.com/daffariz316" style="color: black; text-decoration: none;">Daffarizqy Prastowiyono - Hustler</a>
-* <a href="https://github.com/farhanfahrezyy" style="color: black; text-decoration: none;">Muhammad Farhan Fahrezy - Hacker</a>
-* <a href="https://github.com/FrzAdli" style="color: black; text-decoration: none;">Adli Farizi - Hacker</a>
+* <a href="https://github.com/setiadyanwar">Setiady Ibrahim Anwar</a> - Hipster
+* <a href="https://github.com/daffariz316">Daffarizqy Prastowiyono</a> - Hustler
+* <a href="https://github.com/farhanfahrezyy">Muhammad Farhan Fahrezy</a> - Hacker
+* <a href="https://github.com/FrzAdli">Adli Farizi</a> - Hacker
