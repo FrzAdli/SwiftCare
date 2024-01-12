@@ -19,6 +19,20 @@ The challenge is to address inefficiencies and barriers in the current funding a
 
 Our application aims to address this challenge by providing a user-friendly platform that promotes collective well-being through sharing and supporting those in need. The purpose of this application is to streamline the donation process and make it more accurate, faster, and reliable. Users can easily donate money or start a fundraiser to support various social causes, and the intended recipient quickly receives their efforts.
 
+<!-- Feature Screenshots -->
+## Feature Screenshots
+# Authentication
+<img src="" alt="SignUp">
+<img src="" alt="SignIn">
+
+# Home Page
+<img src="" alt="HomePage">
+
+# Donation Page
+<img src="" alt="DonationPage">
+<img src="" alt="DonationDetail">
+
+
 <!-- ABOUT Team-->
 ## SwiftCare Production Team
 SwiftCare was built by the vocdev team consisting of:
