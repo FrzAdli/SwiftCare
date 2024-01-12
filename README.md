@@ -22,8 +22,8 @@ Our application aims to address this challenge by providing a user-friendly plat
 <!-- Feature Screenshots -->
 ## Feature Screenshots
 ### Authentication
-<img src="images/Sign Up.jpg" alt="SignUp" width="108" height="240">
-<img src="images/Sign In.jpg" alt="SignIn">
+<img src="images/Signup.jpg" alt="SignUp" width="108" height="240">
+<img src="images/Sign In.jpg" alt="SignIn" idth="108" height="240">
 
 ### Home Page
 <img src="images/Homepage.jpg" alt="HomePage">
