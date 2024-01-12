@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/setiadyanwar/SwiftCare">
-    <img src="images/SwiftCare.jpg" alt="Logo" width="80" height="80">
+    <img src="images/SwiftCare.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">SwiftCare</h3>
