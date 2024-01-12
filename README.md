@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/setiadyanwar/SwiftCare">
-    <img src="https://firebasestorage.googleapis.com/v0/b/swiftcare-86318.appspot.com/o/assets%2FSwiftCare.svg?alt=media&token=8d36a8cd-adab-447e-9def-cac448bd2363" alt="Logo" width="80" height="80">
+    <img src="images/SwiftCare.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">SwiftCare</h3>
@@ -18,6 +18,20 @@
 The challenge is to address inefficiencies and barriers in the current funding and social support landscape. Despite various charities and organizations, there is still a lack of a centralized and efficient platform that enables seamless, timely, and reliable giving while facilitating direct participation in social action.
 
 Our application aims to address this challenge by providing a user-friendly platform that promotes collective well-being through sharing and supporting those in need. The purpose of this application is to streamline the donation process and make it more accurate, faster, and reliable. Users can easily donate money or start a fundraiser to support various social causes, and the intended recipient quickly receives their efforts.
+
+<!-- Feature Screenshots -->
+## Feature Screenshots
+### Authentication
+<img src="" alt="SignUp">
+<img src="" alt="SignIn">
+
+### Home Page
+<img src="" alt="HomePage">
+
+### Donation Page
+<img src="" alt="DonationPage">
+<img src="" alt="DonationDetail">
+
 
 <!-- ABOUT Team-->
 ## SwiftCare Production Team
