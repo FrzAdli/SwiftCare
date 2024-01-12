@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DescriptionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="   Sekitar tanggal 2 desember 2023 telah terjadi bencana banjir yang melanda sebagian wilayah di Aceh, banyak warga yang mengungsi memerlukan abntuan obat-obatan dan pakaian bersih. Mari kita ulurkan tangan tuntuk membantu saudara kita di aceh...." />
+
+</FrameLayout>
