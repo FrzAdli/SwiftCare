@@ -26,7 +26,7 @@ Our application aims to address this challenge by providing a user-friendly plat
 
 
 ### Home Page
-<img src="images/homepage.jpg" alt="home.jpg" width="216" height="480">
+<img src="images/home.jpg" alt="home.jpg" width="216" height="480">
 
 ### Donation Page
 <img src="images/Donation_Page.jpg" alt="DonationPage" width="216" height="480"> <img src="images/detaildonate.jpg" alt="DonationDetail" width="216" height="480" >
