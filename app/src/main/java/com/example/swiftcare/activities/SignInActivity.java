@@ -117,7 +117,6 @@ public class SignInActivity extends AppCompatActivity {
                             && task.getResult().getDocuments().size() > 0) {
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
-                        preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
                         preferenceManager.putString(Constants.KEY_USERNAME, documentSnapshot.getString(Constants.KEY_USERNAME));
                         if (documentSnapshot.contains(Constants.KEY_PHONE_NUMBER)) {
                             preferenceManager.putString(Constants.KEY_PHONE_NUMBER, documentSnapshot.getString(Constants.KEY_PHONE_NUMBER));
@@ -143,7 +142,10 @@ public class SignInActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         QuerySnapshot querySnapshot = task.getResult();
                         if (querySnapshot != null && !querySnapshot.isEmpty()) {
-                            showToast("Welcome back, " + username);
+                            preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                            preferenceManager.putString(Constants.KEY_USERNAME, username);
+                            preferenceManager.putString(Constants.KEY_EMAIL, email);
+                            loadingGoogle(false);
                         } else {
                             saveUserToFirestore(email, username);
                         }
@@ -165,7 +167,6 @@ public class SignInActivity extends AppCompatActivity {
         usersRef.add(user)
                 .addOnSuccessListener(documentReference -> {
                     preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
-                    preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
                     preferenceManager.putString(Constants.KEY_USERNAME, username);
                     preferenceManager.putString(Constants.KEY_EMAIL, email);
                     loadingGoogle(false);

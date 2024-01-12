@@ -34,6 +34,7 @@ public class CTAActivity extends AppCompatActivity {
         }
 
         imageSlider();
+        setListener();
     }
 
     private void imageSlider() {
@@ -43,7 +44,6 @@ public class CTAActivity extends AppCompatActivity {
         slideModels.add(new SlideModel(R.drawable.slider3, null, ScaleTypes.CENTER_INSIDE));
         slideModels.add(new SlideModel(R.drawable.slider4, null, ScaleTypes.CENTER_INSIDE));
         binding.imageSlider.setImageList(slideModels);
-        setListener();
     }
 
     private void setListener(){
