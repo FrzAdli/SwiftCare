@@ -29,7 +29,7 @@ Our application aims to address this challenge by providing a user-friendly plat
 <img src="images/Homepage.jpg" alt="HomePage" width="216" height="480">
 
 ### Donation Page
-<img src="images/Donation_Page.jpg" alt="DonationPage" width="216" height="480"><img src="images/donation detail.jpg" alt="DonationDetail" width="216" height="480" margin-left: 5px>
+<img src="images/Donation_Page.jpg" alt="DonationPage" width="216" height="480"><img src="images/donation detail.jpg" alt="DonationDetail" width="216" height="480" margin-left=5px>
 
 
 <!-- Progress -->
