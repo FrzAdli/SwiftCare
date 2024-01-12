@@ -91,7 +91,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="210dp">
 
             <com.denzcoskun.imageslider.ImageSlider
                 android:id="@+id/imageSlider"
@@ -118,9 +119,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:layout_marginBottom="@dimen/_24sdp"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
                 android:padding="@dimen/_8sdp"
                 android:elevation="@dimen/_6sdp"
                 android:paddingBottom="@dimen/_8sdp"
@@ -209,7 +208,7 @@
                         android:layout_width="@dimen/_50sdp"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_8sdp"
-                        android:src="@drawable/ic_datainformation" />
+                        android:src="@drawable/ic_community" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -337,6 +336,12 @@
 
             </HorizontalScrollView>
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bannermbah"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:layout_constraintTop_toBottomOf="@id/sc_2"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
