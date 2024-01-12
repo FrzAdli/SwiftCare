@@ -34,15 +34,15 @@ Our application aims to address this challenge by providing a user-friendly plat
 
 <!-- Progress -->
 ## Progress
-- [x] Authentication       ![](https://geps.dev/progress/70)
-- [x] Homepage             ![](https://geps.dev/progress/30)
-- [x] Donation             ![](https://geps.dev/progress/20)
-- [ ] LoveList             ![](https://geps.dev/progress/0)
-- [ ] Profile              ![](https://geps.dev/progress/0)
-- [ ] RaiseFund            ![](https://geps.dev/progress/0)
-- [ ] Data Information     ![](https://geps.dev/progress/0)
-- [ ] Donation Schedule    ![](https://geps.dev/progress/0)
-- [ ] Community            ![](https://geps.dev/progress/0)
+- [x] ![](https://geps.dev/progress/70) Authentication
+- [x] ![](https://geps.dev/progress/30) Homepage
+- [x] ![](https://geps.dev/progress/20) Donation
+- [ ] ![](https://geps.dev/progress/0) LoveList
+- [ ] ![](https://geps.dev/progress/0) Profile 
+- [ ] ![](https://geps.dev/progress/0) RaiseFund
+- [ ] ![](https://geps.dev/progress/0) Data Information
+- [ ] ![](https://geps.dev/progress/0) Donation Schedule
+- [ ] ![](https://geps.dev/progress/0) Community
 
 
 <!-- ABOUT Team-->
