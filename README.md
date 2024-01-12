@@ -22,14 +22,14 @@ Our application aims to address this challenge by providing a user-friendly plat
 <!-- Feature Screenshots -->
 ## Feature Screenshots
 ### Authentication
-<img src="" alt="SignUp">
-<img src="" alt="SignIn">
+<img src="images/Sign Up" alt="SignUp">
+<img src="images/Sign In" alt="SignIn">
 
 ### Home Page
-<img src="" alt="HomePage">
+<img src="images/Homepage" alt="HomePage">
 
 ### Donation Page
-<img src="" alt="DonationPage">
+<img src="images/Donation_Page" alt="DonationPage">
 <img src="" alt="DonationDetail">
 
 <!-- Progress -->
