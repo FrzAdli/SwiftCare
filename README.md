@@ -22,14 +22,14 @@ Our application aims to address this challenge by providing a user-friendly plat
 <!-- Feature Screenshots -->
 ## Feature Screenshots
 ### Authentication
-<img src="" alt="SignUp">
-<img src="" alt="SignIn">
+<img src="images/signup.jpg" alt="SignUp" width="216" height="480"> <img src="images/Sign In.jpg" alt="SignIn" idth="216" height="480">
+
 
 ### Home Page
-<img src="" alt="HomePage">
+<img src="images/Homepage.jpg" alt="HomePage" width="216" height="480">
 
 ### Donation Page
-<img src="" alt="DonationPage">
+<img src="images/Donation_Page.jpg" alt="DonationPage" width="216" height="480">
 <img src="" alt="DonationDetail">
 
 <!-- Progress -->
