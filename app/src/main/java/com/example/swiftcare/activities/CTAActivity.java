@@ -31,6 +31,7 @@ public class CTAActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
             startActivity(intent);
             finish();
+
         }
 
         imageSlider();
