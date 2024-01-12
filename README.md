@@ -32,6 +32,18 @@ Our application aims to address this challenge by providing a user-friendly plat
 <img src="" alt="DonationPage">
 <img src="" alt="DonationDetail">
 
+<!-- Progress -->
+## Progress
+- [x] ![](https://geps.dev/progress/70) Authentication
+- [x] ![](https://geps.dev/progress/30) Homepage
+- [x] ![](https://geps.dev/progress/20) Donation
+- [ ] ![](https://geps.dev/progress/0) LoveList
+- [ ] ![](https://geps.dev/progress/0) Profile 
+- [ ] ![](https://geps.dev/progress/0) RaiseFund
+- [ ] ![](https://geps.dev/progress/0) Data Information
+- [ ] ![](https://geps.dev/progress/0) Donation Schedule
+- [ ] ![](https://geps.dev/progress/0) Community
+
 
 <!-- ABOUT Team-->
 ## SwiftCare Production Team
