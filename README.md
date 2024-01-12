@@ -30,7 +30,7 @@ Our application aims to address this challenge by providing a user-friendly plat
 
 ### Donation Page
 <img src="images/Donation_Page.jpg" alt="DonationPage" width="216" height="480">
-<img src="images/donation detail.jpg" alt="DonationDetail">
+<img src="images/donation detail.jpg" alt="DonationDetail" width="216" height="480">
 
 <!-- Progress -->
 ## Progress
