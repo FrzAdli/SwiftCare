@@ -77,7 +77,7 @@ public class DonateFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.image1.setOnClickListener(v ->
+        binding.card1.setOnClickListener(v ->
                 startActivity(new Intent(requireContext(), DonateDetailActivity.class)));
     }
 }

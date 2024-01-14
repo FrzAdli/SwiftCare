@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment">
 
@@ -83,7 +84,7 @@
         android:id="@+id/sc_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_container"
         android:scrollbars="none">
@@ -97,9 +98,8 @@
             <com.denzcoskun.imageslider.ImageSlider
                 android:id="@+id/imageSlider"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_170sdp"
+                android:layout_height="@dimen/_158sdp"
                 android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
                 app:iss_auto_cycle="true"
                 app:iss_corner_radius="20"
@@ -223,6 +223,17 @@
 
 
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/linebatas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/line00"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/mainNavbar"
+
+               />
             <HorizontalScrollView
                 android:id="@+id/sc_2"
                 android:layout_width="match_parent"
@@ -230,33 +241,38 @@
                 android:overScrollMode="never"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                app:layout_constraintTop_toBottomOf="@+id/mainNavbar"
+                app:layout_constraintTop_toBottomOf="@+id/linebatas"
                 android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="240dp"
                     android:gravity="center_vertical"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:orientation="horizontal">
                     <androidx.cardview.widget.CardView
-                        android:layout_width="165dp"
+                        android:id="@+id/sl_1"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:layout_width="197dp"
                         android:layout_height="230dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:backgroundTint="@color/white"
-                        app:cardCornerRadius="@dimen/_16sdp"
+                        app:cardCornerRadius="@dimen/_8sdp"
                         android:elevation="10dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="197dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="175dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/donate1"/>
+                                android:layout_width="230dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/image_banjir1"/>
                             <TextView
                                 android:layout_width="175dp"
                                 android:layout_height="wrap_content"
@@ -270,24 +286,25 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
-                        android:layout_width="165dp"
+                        android:id="@+id/sl_2"
+                        android:layout_width="197dp"
                         android:layout_height="230dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:backgroundTint="@color/white"
-                        app:cardCornerRadius="@dimen/_16sdp"
+                        app:cardCornerRadius="@dimen/_8sdp"
                         android:elevation="10dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="197dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="175dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/donate1"/>
+                                android:layout_width="230dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/image_banjir1"/>
                             <TextView
                                 android:layout_width="175dp"
                                 android:layout_height="wrap_content"
@@ -301,24 +318,57 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
-                        android:layout_width="165dp"
+                        android:id="@+id/sl_3"
+                        android:layout_width="197dp"
                         android:layout_height="230dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:backgroundTint="@color/white"
-                        app:cardCornerRadius="@dimen/_16sdp"
+                        app:cardCornerRadius="@dimen/_8sdp"
                         android:elevation="10dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="197dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <ImageView
                                 android:layout_gravity="center"
+                                android:layout_width="230dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/image_banjir1"/>
+                            <TextView
                                 android:layout_width="175dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/donate1"/>
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="2dp"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:text="Let's be a part of helping \nflood victims in Aceh"/>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/sl_4"
+                        android:layout_width="197dp"
+                        android:layout_height="230dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="@dimen/_8sdp"
+                        android:elevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="197dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="230dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/image_banjir1"/>
                             <TextView
                                 android:layout_width="175dp"
                                 android:layout_height="wrap_content"
@@ -340,7 +390,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/bannermbah"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 app:layout_constraintTop_toBottomOf="@id/sc_2"/>
 
 
