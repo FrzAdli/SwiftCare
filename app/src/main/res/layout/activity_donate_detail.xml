@@ -212,6 +212,8 @@
                 android:layout_marginVertical="@dimen/_12sdp"
                 android:layout_below="@id/fundTarget"
                 android:elevation="@dimen/_4sdp">
+                
+
 
                 <ImageView
                     android:id="@+id/fundraiserProfile"
