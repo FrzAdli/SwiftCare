@@ -1,66 +1,69 @@
 package com.example.swiftcare.fragments;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.swiftcare.R;
+import com.example.swiftcare.databinding.FragmentDescriptionBinding;
+import com.example.swiftcare.utilities.Constants;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DescriptionFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class DescriptionFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private FragmentDescriptionBinding binding;
+    private String description;
 
     public DescriptionFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DescriptionFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DescriptionFragment newInstance(String param1, String param2) {
-        DescriptionFragment fragment = new DescriptionFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            description = getArguments().getString(Constants.KEY_DONATION_DESC);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = FragmentDescriptionBinding.inflate(inflater, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_description, container, false);
+        return binding.getRoot();
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding.donationDesc.setText(description);
+        binding.donationDesc.setMaxLines(5);
+        Drawable arrowDown = ContextCompat.getDrawable(requireContext(), R.drawable.ic_arrow_down);
+        Drawable arrowUp = ContextCompat.getDrawable(requireContext(), R.drawable.ic_arrow_down);
+
+        binding.ivArrow.setOnClickListener(v -> {
+            if (binding.donationDesc.getMaxLines() == 5) {
+                binding.donationDesc.setMaxLines(Integer.MAX_VALUE);
+                binding.ivArrow.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, arrowUp, null);
+                binding.gradientWhite.setVisibility(View.INVISIBLE);
+            } else {
+                binding.donationDesc.setMaxLines(5);
+                binding.ivArrow.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, arrowDown, null);
+                binding.gradientWhite.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
 }

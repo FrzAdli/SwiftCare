@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.swiftcare.R;
 import com.example.swiftcare.activities.SignInActivity;
 import com.example.swiftcare.databinding.FragmentProfileBinding;
+import com.example.swiftcare.utilities.Constants;
 import com.example.swiftcare.utilities.PreferenceManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -87,6 +88,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        loadProfile();
         binding.logoutButton.setOnClickListener( v -> {
             gClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -98,5 +100,9 @@ public class ProfileFragment extends Fragment {
                 }
             });
         });
+    }
+
+    private void loadProfile() {
+        binding.profileName.setText(preferenceManager.getString(Constants.KEY_USERNAME));
     }
 }

@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.DescriptionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/donationDesc"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="   Sekitar tanggal 2 desember 2023 telah terjadi bencana banjir yang melanda sebagian wilayah di Aceh, banyak warga yang mengungsi memerlukan abntuan obat-obatan dan pakaian bersih. Mari kita ulurkan tangan tuntuk membantu saudara kita di aceh...." />
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_10sdp"
+        android:text="Desc 1"
+        android:textColor="@color/neutral_N200"
+        android:textSize="@dimen/_11ssp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-</FrameLayout>
+
+    <View
+        android:id="@+id/gradientWhite"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:background="@color/gradient_white"
+        app:layout_constraintBottom_toTopOf="@id/ivArrow"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/ivArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/donationDesc"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="See More"
+        android:textColor="@color/primary_800"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintTop_toBottomOf="@id/donationDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:drawableEndCompat="@drawable/ic_arrow_down"
+        android:drawableTint="@color/primary_800"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

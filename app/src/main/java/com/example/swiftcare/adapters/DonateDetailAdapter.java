@@ -9,7 +9,12 @@ import com.example.swiftcare.fragments.DescriptionFragment;
 import com.example.swiftcare.fragments.LatestnewsFragment;
 import com.example.swiftcare.fragments.VolunteerFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DonateDetailAdapter extends FragmentStateAdapter {
+    private final List<Fragment> fragmentList = new ArrayList<>();
+
     public DonateDetailAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
@@ -17,18 +22,34 @@ public class DonateDetailAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position){
-            case 1:
-                return new LatestnewsFragment();
-            case 2:
-                return new VolunteerFragment();
-            default:
-                return new DescriptionFragment();
+        while (fragmentList.size() <= position) {
+            fragmentList.add(null);
         }
+
+        if (fragmentList.get(position) == null) {
+            switch (position) {
+                case 0:
+                    fragmentList.set(position, new DescriptionFragment());
+                    break;
+                case 1:
+                    fragmentList.set(position, new LatestnewsFragment());
+                    break;
+                case 2:
+                    fragmentList.set(position, new VolunteerFragment());
+                    break;
+            }
+        }
+
+        return fragmentList.get(position);
+    }
+
+    public void addFragment(Fragment fragment) {
+        fragmentList.add(fragment);
+        notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return fragmentList.size();
     }
 }
