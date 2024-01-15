@@ -142,7 +142,9 @@ public class SignInActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         QuerySnapshot querySnapshot = task.getResult();
                         if (querySnapshot != null && !querySnapshot.isEmpty()) {
+                            DocumentSnapshot document = querySnapshot.getDocuments().get(0);
                             preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                            preferenceManager.putString(Constants.KEY_USER_ID, document.getId());
                             preferenceManager.putString(Constants.KEY_USERNAME, username);
                             preferenceManager.putString(Constants.KEY_EMAIL, email);
                             loadingGoogle(false);
@@ -167,6 +169,7 @@ public class SignInActivity extends AppCompatActivity {
         usersRef.add(user)
                 .addOnSuccessListener(documentReference -> {
                     preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                    preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
                     preferenceManager.putString(Constants.KEY_USERNAME, username);
                     preferenceManager.putString(Constants.KEY_EMAIL, email);
                     loadingGoogle(false);

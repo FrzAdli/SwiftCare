@@ -24,4 +24,5 @@
     <color name="secondary_200">#FDFF8A</color>
     <color name="red_D400">#B30020</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="gradient_white">#B3FFFFFF</color>
 </resources>
