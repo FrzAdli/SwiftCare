@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.swiftcare.R;
+import com.example.swiftcare.activities.RaisefundActivity;
 import com.example.swiftcare.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
@@ -66,7 +67,6 @@ public class HomeFragment extends Fragment {
 
 
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -92,8 +92,24 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.RaiseFund.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Buat objek Intent
+                Intent intent = new Intent(getActivity(), RaisefundActivity.class);
+
+                // Tambahkan data ke intent
+                intent.putExtra("data", "Hello, World!");
+
+                // Mulai aktivitas baru
+                startActivity(intent);
+            }
+        });
+
+
         imageSlider();
 
 
     }
+
 }
