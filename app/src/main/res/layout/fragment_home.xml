@@ -156,7 +156,8 @@
                 <LinearLayout
                     android:id="@+id/DonationSchedule"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
@@ -179,6 +180,7 @@
                     android:id="@+id/DataInformation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:layout_marginRight="10dp"
                     android:orientation="vertical"
@@ -263,30 +265,103 @@
                         app:cardCornerRadius="@dimen/_8sdp"
                         android:elevation="10dp">
 
-                        <LinearLayout
-                            android:layout_width="197dp"
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                           >
 
                             <ImageView
-                                android:layout_gravity="center"
-                                android:layout_width="230dp"
-                                android:layout_height="110dp"
-                                android:src="@drawable/image_banjir1"/>
+                                android:id="@+id/donationImages"
+                                android:adjustViewBounds="true"
+                                android:layout_width="203dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/imageflood"
+                                />
                             <TextView
+                                android:id="@+id/donationTitle"
                                 android:layout_width="175dp"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
+                                android:layout_below="@+id/donationImages"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="2dp"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
                                 android:text="Let's be a part of helping \nflood victims in Aceh"/>
+                            <TextView
+                                android:id="@+id/fundraiserName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/donationTitle"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:drawableEnd="@drawable/ic_verified"
+                                android:gravity="top"
+                                android:text="Komunitas ACT"
+                                android:textColor="@color/neutral_N70"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="bold" />
 
-                        </LinearLayout>
+                            <TextView
+                                android:id="@+id/collected1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fundraiserName"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:text="collected"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9ssp" />
+
+
+                            <ProgressBar
+                                android:id="@+id/progressbar1"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_5sdp"
+                                android:layout_below="@id/collected1"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:foregroundGravity="right"
+                                android:progress="68"
+                                android:progressDrawable="@drawable/curved_progress_bar"
+                                android:progressTint="@color/primary_200" />
+
+                            <TextView
+                                android:id="@+id/donationTarget"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/progressbar1"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:text="Rp 12.000.000"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/donationDays"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/progressbar1"
+                                android:layout_alignTop="@id/donationTarget"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:layout_gravity="end"
+                                android:text="3 Days Left"
+                                android:textColor="@color/neutral_N70"
+                                android:textSize="@dimen/_7ssp" />
+
+                        </RelativeLayout>
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:id="@+id/sl_2"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
                         android:layout_width="197dp"
                         android:layout_height="230dp"
                         android:layout_marginStart="10dp"
@@ -295,30 +370,103 @@
                         app:cardCornerRadius="@dimen/_8sdp"
                         android:elevation="10dp">
 
-                        <LinearLayout
-                            android:layout_width="197dp"
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            >
 
                             <ImageView
+                                android:id="@+id/donationImages2"
                                 android:layout_gravity="center"
                                 android:layout_width="230dp"
-                                android:layout_height="110dp"
-                                android:src="@drawable/image_banjir1"/>
+                                android:adjustViewBounds="true"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/imageflood"/>
                             <TextView
+                                android:id="@+id/donationTitle2"
                                 android:layout_width="175dp"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
+                                android:layout_below="@+id/donationImages2"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="2dp"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
                                 android:text="Let's be a part of helping \nflood victims in Aceh"/>
+                            <TextView
+                                android:id="@+id/fundraiserName2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/donationTitle2"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:drawableEnd="@drawable/ic_verified"
+                                android:gravity="top"
+                                android:text="Komunitas ACT"
+                                android:textColor="@color/neutral_N70"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="bold" />
 
-                        </LinearLayout>
+                            <TextView
+                                android:id="@+id/collected2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fundraiserName2"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:text="collected"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9ssp" />
+
+
+                            <ProgressBar
+                                android:id="@+id/progressbar2"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_5sdp"
+                                android:layout_below="@id/collected2"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:foregroundGravity="right"
+                                android:progress="68"
+                                android:progressDrawable="@drawable/curved_progress_bar"
+                                android:progressTint="@color/primary_200" />
+
+                            <TextView
+                                android:id="@+id/donationTarget2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/progressbar2"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:text="Rp 12.000.000"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/donationDays2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/progressbar2"
+                                android:layout_alignTop="@id/donationTarget2"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:layout_gravity="end"
+                                android:text="3 Days Left"
+                                android:textColor="@color/neutral_N70"
+                                android:textSize="@dimen/_7ssp" />
+
+                        </RelativeLayout>
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:id="@+id/sl_3"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
                         android:layout_width="197dp"
                         android:layout_height="230dp"
                         android:layout_marginStart="10dp"
@@ -327,30 +475,103 @@
                         app:cardCornerRadius="@dimen/_8sdp"
                         android:elevation="10dp">
 
-                        <LinearLayout
-                            android:layout_width="197dp"
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            >
 
                             <ImageView
-                                android:layout_gravity="center"
-                                android:layout_width="230dp"
-                                android:layout_height="110dp"
-                                android:src="@drawable/image_banjir1"/>
+                                android:id="@+id/donationImages3"
+                                android:adjustViewBounds="true"
+                                android:layout_width="203dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/imageflood"/>
                             <TextView
+                                android:id="@+id/donationTitle3"
                                 android:layout_width="175dp"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
+                                android:layout_below="@+id/donationImages3"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="2dp"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
                                 android:text="Let's be a part of helping \nflood victims in Aceh"/>
+                            <TextView
+                                android:id="@+id/fundraiserName3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/donationTitle3"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:drawableEnd="@drawable/ic_verified"
+                                android:gravity="top"
+                                android:text="Komunitas ACT"
+                                android:textColor="@color/neutral_N70"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="bold" />
 
-                        </LinearLayout>
+                            <TextView
+                                android:id="@+id/collected3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fundraiserName3"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:text="collected"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9ssp" />
+
+
+                            <ProgressBar
+                                android:id="@+id/progressbar3"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_5sdp"
+                                android:layout_below="@id/collected3"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:foregroundGravity="right"
+                                android:progress="68"
+                                android:progressDrawable="@drawable/curved_progress_bar"
+                                android:progressTint="@color/primary_200" />
+
+                            <TextView
+                                android:id="@+id/donationTarget3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/progressbar3"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:text="Rp 12.000.000"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/donationDays3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/progressbar3"
+                                android:layout_alignTop="@id/donationTarget3"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:layout_gravity="end"
+                                android:text="3 Days Left"
+                                android:textColor="@color/neutral_N70"
+                                android:textSize="@dimen/_7ssp" />
+
+                        </RelativeLayout>
                     </androidx.cardview.widget.CardView>
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/sl_4"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
                         android:layout_width="197dp"
                         android:layout_height="230dp"
                         android:layout_marginStart="10dp"
@@ -359,27 +580,97 @@
                         app:cardCornerRadius="@dimen/_8sdp"
                         android:elevation="10dp">
 
-                        <LinearLayout
-                            android:layout_width="197dp"
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            >
 
                             <ImageView
-                                android:layout_gravity="center"
-                                android:layout_width="230dp"
-                                android:layout_height="110dp"
-                                android:src="@drawable/image_banjir1"/>
+                                android:id="@+id/donationImages4"
+                                android:adjustViewBounds="true"
+                                android:layout_width="203dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/imageflood"/>
                             <TextView
+                                android:id="@+id/donationTitle4"
                                 android:layout_width="175dp"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
+                                android:layout_below="@+id/donationImages4"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="2dp"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
                                 android:text="Let's be a part of helping \nflood victims in Aceh"/>
+                            <TextView
+                                android:id="@+id/fundraiserName4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/donationTitle4"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:drawableEnd="@drawable/ic_verified"
+                                android:gravity="top"
+                                android:text="Komunitas ACT"
+                                android:textColor="@color/neutral_N70"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="bold" />
 
-                        </LinearLayout>
+                            <TextView
+                                android:id="@+id/collected4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fundraiserName4"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:text="collected"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9ssp" />
+
+
+                            <ProgressBar
+                                android:id="@+id/progressbar4"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_5sdp"
+                                android:layout_below="@id/collected4"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:foregroundGravity="right"
+                                android:progress="68"
+                                android:progressDrawable="@drawable/curved_progress_bar"
+                                android:progressTint="@color/primary_200" />
+
+                            <TextView
+                                android:id="@+id/donationTarget4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/progressbar4"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:text="Rp 12.000.000"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/donationDays4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/progressbar4"
+                                android:layout_alignTop="@id/donationTarget4"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:layout_gravity="end"
+                                android:text="3 Days Left"
+                                android:textColor="@color/neutral_N70"
+                                android:textSize="@dimen/_7ssp" />
+
+                        </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
@@ -391,6 +682,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/bannermbah"
                 android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/sc_2"/>
 
 
