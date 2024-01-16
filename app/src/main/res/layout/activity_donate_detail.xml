@@ -131,7 +131,9 @@
                         android:id="@+id/days"
                         android:layout_width="@dimen/_20sdp"
                         android:layout_height="@dimen/_20sdp"
-                        android:textSize="@dimen/_10sdp"
+                        android:textSize="@dimen/_7sdp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:textColor="@color/neutral_N400"
                         android:gravity="center"
                         android:background="@drawable/bg_round_countdowntimer"/>
                     <TextView
@@ -146,7 +148,9 @@
                         android:id="@+id/hours"
                         android:layout_width="@dimen/_20sdp"
                         android:layout_height="@dimen/_20sdp"
-                        android:textSize="@dimen/_10sdp"
+                        android:textSize="@dimen/_7sdp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:textColor="@color/neutral_N400"
                         android:gravity="center"
                         android:background="@drawable/bg_round_countdowntimer"/>
                     <TextView
@@ -161,7 +165,9 @@
                         android:id="@+id/minutes"
                         android:layout_width="@dimen/_20sdp"
                         android:layout_height="@dimen/_20sdp"
-                        android:textSize="@dimen/_10sdp"
+                        android:textSize="@dimen/_7sdp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:textColor="@color/neutral_N400"
                         android:gravity="center"
                         android:background="@drawable/bg_round_countdowntimer"/>
 

@@ -62,7 +62,7 @@ public class DonateDetailActivity extends AppCompatActivity {
         long diffInMillies = getIntent().getExtras().getLong(Constants.KEY_DONATION_END) - today.getTime();
         long daysleft = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
         long secondsLeft = TimeUnit.SECONDS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-        setCountdown((int) secondsLeft);
+        setCountdown(secondsLeft);
         binding.timeLeft.setText(daysleft + " days left");
 
         binding.fundTarget.setText(getIntent().getExtras().getString(Constants.KEY_DONATION_TARGET));
@@ -109,7 +109,6 @@ public class DonateDetailActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 binding.vP2.setCurrentItem(tab.getPosition());
-                System.out.println("onTabSelected");
                 adjustViewPagerHeight(tab.getPosition());
             }
 
@@ -120,7 +119,6 @@ public class DonateDetailActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                System.out.println("onTabReselected");
 //                adjustViewPagerHeight(tab.getPosition());
             }
         });
@@ -160,7 +158,7 @@ public class DonateDetailActivity extends AppCompatActivity {
         }
     }
 
-    private void setCountdown (int duration) {
+    private void setCountdown (long duration) {
         new CountDownTimer(duration * 1000, 1000) {
 
             @Override
