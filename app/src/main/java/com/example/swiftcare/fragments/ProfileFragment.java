@@ -1,12 +1,15 @@
 package com.example.swiftcare.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +18,16 @@ import com.example.swiftcare.R;
 import com.example.swiftcare.activities.SignInActivity;
 import com.example.swiftcare.databinding.FragmentProfileBinding;
 import com.example.swiftcare.utilities.Constants;
+import com.example.swiftcare.utilities.ImageLoader;
 import com.example.swiftcare.utilities.PreferenceManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +39,8 @@ public class ProfileFragment extends Fragment {
     FragmentProfileBinding binding;
     private GoogleSignInClient gClient;
     private GoogleSignInOptions gOptions;
-    PreferenceManager preferenceManager;
+    private PreferenceManager preferenceManager;
+    private String verifiedStatus;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -88,6 +96,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        loadVerifiedStatus();
         loadProfile();
         binding.logoutButton.setOnClickListener( v -> {
             gClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -103,6 +112,34 @@ public class ProfileFragment extends Fragment {
     }
 
     private void loadProfile() {
+        ImageLoader.loadCircleImage(preferenceManager.getString(Constants.KEY_IMAGE_PROFILE), binding.userProfile);
         binding.profileName.setText(preferenceManager.getString(Constants.KEY_USERNAME));
     }
+
+    @SuppressLint("ResourceAsColor")
+    private void loadVerifiedStatus() {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        String userId = preferenceManager.getString(Constants.KEY_USER_ID);
+
+        if (userId != null) {
+            DocumentReference userDocument = database.collection("users").document(userId);
+            userDocument.get().addOnSuccessListener(documentSnapshot -> {
+                if (documentSnapshot.exists()) {
+                    String verifiedStatus = documentSnapshot.getString(Constants.KEY_VERIFIED_STATUS);
+                    if (verifiedStatus != null) {
+                        binding.verified.setText(verifiedStatus);
+                        int colorResource = getResources().getColor(R.color.primary_800);
+                        ColorStateList colorStateList = ColorStateList.valueOf(colorResource);
+                        binding.verified.setBackgroundTintList(colorStateList);
+                        binding.badgeImageView.setImageResource(R.drawable.verified_badge);
+                    }
+                } else {
+                    Log.d("Firestore", "Dokumen tidak ditemukan");
+                }
+            }).addOnFailureListener(e -> {
+                Log.e("Firestore", "Gagal mengambil data", e);
+            });
+        }
+    }
+
 }

@@ -193,8 +193,12 @@ public class DonateDetailActivity extends AppCompatActivity {
 
     private void imageSlider() {
         List<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.floodbanner1, null, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.floodbanner2, null, ScaleTypes.FIT));
+        if(getIntent().getExtras().containsKey(Constants.KEY_IMAGE_URL1)) {
+            slideModels.add(new SlideModel(getIntent().getExtras().getString(Constants.KEY_IMAGE_URL1), null, ScaleTypes.FIT));
+        }
+        if(getIntent().getExtras().containsKey(Constants.KEY_IMAGE_URL2)) {
+            slideModels.add(new SlideModel(getIntent().getExtras().getString(Constants.KEY_IMAGE_URL2), null, ScaleTypes.FIT));
+        }
         binding.imageSlider.setImageList(slideModels);
 
     }

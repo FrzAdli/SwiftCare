@@ -22,7 +22,11 @@
     <color name="primary_700">#00AA4A</color>
     <color name="primary_800">#008439</color>
     <color name="secondary_200">#FDFF8A</color>
+    <color name="secondary_500">#FBFF00</color>
+    <color name="secondary_600">#E4E800</color>
     <color name="red_D400">#B30020</color>
+    <color name="red_D200">#E34A40</color>
+    <color name="not_verified">#F9DD4B</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="gradient_white">#B3FFFFFF</color>
 </resources>

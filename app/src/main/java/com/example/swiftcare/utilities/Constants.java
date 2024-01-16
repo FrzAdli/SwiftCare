@@ -14,6 +14,7 @@ public class Constants {
     public static String KEY_IS_SIGNED_IN = "isSignedIn";
     public static String KEY_USER_ID = "userId";
     public static String KEY_IMAGE_PROFILE = "imageProfile";
+    public static String KEY_VERIFIED_STATUS = "verifiedStatus";
 
     //Donation Constants
     public static String KEY_COLLECTION_DONATIONS = "donationList";
@@ -25,4 +26,7 @@ public class Constants {
     public static String KEY_DONATION_START = "donationStart";
     public static String KEY_DONATION_END = "donationEnd";
     public static String KEY_DONATION_TARGET = "donationTarget";
+    public static String KEY_DONATION_BANNER = "donationBanner";
+    public static String KEY_IMAGE_URL1 = "imageUrl1";
+    public static String KEY_IMAGE_URL2 = "imageUrl2";
 }

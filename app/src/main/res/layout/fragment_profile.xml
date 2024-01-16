@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/neutral_N20"
+    android:background="@color/white"
     tools:context=".fragments.ProfileFragment">
 
     <ImageView
@@ -71,21 +71,28 @@
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginHorizontal="@dimen/_20sdp"
                 android:src="@drawable/photo_profile"
+                android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/NotificaationNumberContainer"
-                android:layout_width="12dp"
-                android:layout_height="14dp"
+                android:id="@+id/registeredBadge"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
                 app:cardBackgroundColor="@color/neutral_N70"
-                android:background="@drawable/bg_online"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="@dimen/_10sdp"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="1dp"
                 app:layout_constraintBottom_toBottomOf="@+id/userProfile"
                 app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/badgeImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/unverified_badge" />
 
             </androidx.cardview.widget.CardView>
 
@@ -114,10 +121,10 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_8sdp"
             android:layout_marginTop="9dp"
-            android:backgroundTint="@color/secondary_200"
+            android:backgroundTint="@color/not_verified"
             android:fontFamily="@font/poppins_regular"
             android:textSize="11dp"
-            android:textColor="@color/neutral_N500"
+            android:textColor="@color/white"
             android:paddingHorizontal="@dimen/_9sdp"
             android:text="Not Verified"
             android:background="@drawable/bg_round_rec"
@@ -233,10 +240,21 @@
             android:textAllCaps="false"
             android:text="Logout"
             android:textSize="@dimen/_13ssp"
-            android:textColor="@color/neutral_N300"
+            android:textColor="@color/red_D200"
             android:background="@drawable/background_stroke"
             android:elevation="@dimen/_10sdp"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="copyright Swifcare 2023 ©"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/neutral_N60"
+            android:textSize="@dimen/_9ssp"
+            android:layout_gravity="center"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
