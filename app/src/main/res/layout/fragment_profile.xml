@@ -8,21 +8,33 @@
     tools:context=".fragments.ProfileFragment">
 
     <ImageView
+        android:id="@+id/profileBackground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_125sdp"
+        android:maxHeight="@dimen/_125sdp"
         android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         android:src="@drawable/bg_atas_profile"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/profileBackgroundHelper"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/bg_profile_helper"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/atas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <RelativeLayout
         android:id="@+id/atas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        >
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,7 +61,8 @@
     <RelativeLayout
         android:id="@+id/box"
         android:layout_width="match_parent"
-        android:layout_height="114dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_15sdp"
         android:background="@drawable/bg_round_50"
         android:backgroundTint="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/atas"
@@ -62,18 +75,26 @@
             android:id="@+id/photoprofile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageView
-                android:id="@+id/userProfile"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/userProfileLayout"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
-                android:layout_marginHorizontal="@dimen/_20sdp"
-                android:src="@drawable/photo_profile"
-                android:scaleType="centerCrop"
+                app:cardCornerRadius="@dimen/_30sdp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/userProfile"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/photo_profile"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
@@ -84,7 +105,7 @@
                 app:cardCornerRadius="@dimen/_10sdp"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="1dp"
-                app:layout_constraintBottom_toBottomOf="@+id/userProfile"
+                app:layout_constraintBottom_toBottomOf="@+id/userProfileLayout"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <ImageView
