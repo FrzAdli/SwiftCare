@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -69,6 +70,7 @@ public class SignInActivity extends AppCompatActivity {
     private void setListener(){
         binding.buttonSignInGoogle.setOnClickListener( v ->
                 activityResultLauncher.launch(gClient.getSignInIntent()));
+
         binding.buttonSignIn.setOnClickListener( v -> {
             if(isValidSignInDetail()) {
                 signIn();
@@ -91,9 +93,10 @@ public class SignInActivity extends AppCompatActivity {
                         if (account != null) {
                             String email = account.getEmail();
                             String username = account.getDisplayName();
+                            String imageProfile = account.getPhotoUrl().toString();
 
                             //Check if user exists
-                            checkIfUserExists(email, username);
+                            checkIfUserExists(email, username, imageProfile);
 
                             Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -118,6 +121,9 @@ public class SignInActivity extends AppCompatActivity {
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                         preferenceManager.putString(Constants.KEY_USERNAME, documentSnapshot.getString(Constants.KEY_USERNAME));
+                        if (documentSnapshot.contains(Constants.KEY_IMAGE_PROFILE)) {
+                            preferenceManager.putString(Constants.KEY_IMAGE_PROFILE, documentSnapshot.getString(Constants.KEY_IMAGE_PROFILE));
+                        }
                         if (documentSnapshot.contains(Constants.KEY_PHONE_NUMBER)) {
                             preferenceManager.putString(Constants.KEY_PHONE_NUMBER, documentSnapshot.getString(Constants.KEY_PHONE_NUMBER));
                         }
@@ -131,7 +137,7 @@ public class SignInActivity extends AppCompatActivity {
                 });
     }
 
-    private void checkIfUserExists(String email, String username) {
+    private void checkIfUserExists(String email, String username, String imageProfile) {
         loadingGoogle(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         CollectionReference usersRef = database.collection("users");
@@ -147,9 +153,15 @@ public class SignInActivity extends AppCompatActivity {
                             preferenceManager.putString(Constants.KEY_USER_ID, document.getId());
                             preferenceManager.putString(Constants.KEY_USERNAME, username);
                             preferenceManager.putString(Constants.KEY_EMAIL, email);
+                            if (document.contains(Constants.KEY_IMAGE_PROFILE)) {
+                                preferenceManager.putString(Constants.KEY_IMAGE_PROFILE, document.getString(Constants.KEY_IMAGE_PROFILE));
+                            }
+                            if (document.contains(Constants.KEY_PHONE_NUMBER)) {
+                                preferenceManager.putString(Constants.KEY_PHONE_NUMBER, document.getString(Constants.KEY_PHONE_NUMBER));
+                            }
                             loadingGoogle(false);
                         } else {
-                            saveUserToFirestore(email, username);
+                            saveUserToFirestore(email, username, imageProfile);
                         }
                     } else {
                         Exception exception = task.getException();
@@ -158,13 +170,15 @@ public class SignInActivity extends AppCompatActivity {
                 });
     }
 
-    private void saveUserToFirestore(String email, String username) {
+    private void saveUserToFirestore(String email, String username, String imageProfile) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         CollectionReference usersRef = database.collection(Constants.KEY_COLLECTION_USERS);
 
         Map<String, Object> user = new HashMap<>();
-        user.put("email", email);
-        user.put("username", username);
+        user.put(Constants.KEY_EMAIL, email);
+        user.put(Constants.KEY_USERNAME, username);
+        user.put(Constants.KEY_IMAGE_PROFILE, imageProfile);
+        user.put(Constants.KEY_VERIFIED_STATUS, "Not Verified");
 
         usersRef.add(user)
                 .addOnSuccessListener(documentReference -> {
@@ -172,6 +186,7 @@ public class SignInActivity extends AppCompatActivity {
                     preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
                     preferenceManager.putString(Constants.KEY_USERNAME, username);
                     preferenceManager.putString(Constants.KEY_EMAIL, email);
+                    preferenceManager.putString(Constants.KEY_IMAGE_PROFILE, imageProfile);
                     loadingGoogle(false);
                 })
                 .addOnFailureListener(e -> showToast("Error saving user data"));

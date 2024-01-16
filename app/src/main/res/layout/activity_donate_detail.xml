@@ -242,7 +242,7 @@
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginHorizontal="@dimen/_10sdp"
-                    android:src="@drawable/ic_verified"
+                    android:src="@drawable/verified_badge"
                     android:layout_toEndOf="@id/fundraiserName"
                     android:layout_alignTop="@id/fundraiserProfile"
                     android:layout_alignBottom="@id/fundraiserProfile"/>

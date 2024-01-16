@@ -160,6 +160,14 @@ public class DonateFragment extends Fragment {
                     Timestamp donationEndTimestamp = document.getTimestamp(Constants.KEY_DONATION_END);
                     donation.donationEnd = donationEndTimestamp != null ? donationEndTimestamp.toDate() : null;
                     donation.donationTarget = document.getLong(Constants.KEY_DONATION_TARGET);
+                    //Photo
+                    donation.donationBanner = document.getString(Constants.KEY_DONATION_BANNER);
+                    if (document.contains(Constants.KEY_IMAGE_URL1)) {
+                        donation.imageUrl1 =  document.getString(Constants.KEY_IMAGE_URL1);
+                    }
+                    if (document.contains(Constants.KEY_IMAGE_URL2)) {
+                        donation.imageUrl2 =  document.getString(Constants.KEY_IMAGE_URL2);
+                    }
 
                     donationList.add(donation);
                 }

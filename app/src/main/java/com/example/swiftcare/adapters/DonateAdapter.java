@@ -15,6 +15,7 @@ import com.example.swiftcare.databinding.DonateSingleViewBinding;
 import com.example.swiftcare.databinding.FragmentDonateBinding;
 import com.example.swiftcare.models.Donation;
 import com.example.swiftcare.utilities.Constants;
+import com.example.swiftcare.utilities.ImageLoader;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -56,6 +57,7 @@ public class DonateAdapter extends RecyclerView.Adapter<DonateAdapter.DonateView
     public void onBindViewHolder(@NonNull DonateViewHolder holder, int position) {
         Donation donation = donationList.get(position);
 
+        ImageLoader.loadImage(donation.getDonationBanner(), holder.binding.donationBanner);
         holder.binding.donationTitle.setText(donation.getDonationTitle());
         holder.binding.fundraiserName.setText(donation.getFundraiserName());
         NumberFormat formatter = new DecimalFormat("#,###");
@@ -81,6 +83,12 @@ public class DonateAdapter extends RecyclerView.Adapter<DonateAdapter.DonateView
             bundle.putString(Constants.KEY_DONATION_TARGET, donationTarget);
             bundle.putLong(Constants.KEY_DONATION_START, donation.donationStart.getTime());
             bundle.putLong(Constants.KEY_DONATION_END, donation.donationEnd.getTime());
+            if(donation.getImageUrl1() != null){
+                bundle.putString(Constants.KEY_IMAGE_URL1, donation.getImageUrl1());
+            }
+            if(donation.getImageUrl2() != null){
+                bundle.putString(Constants.KEY_IMAGE_URL2, donation.getImageUrl2());
+            }
             i.putExtras(bundle);
             context.startActivity(i);
         });

@@ -3,7 +3,7 @@ package com.example.swiftcare.models;
 import java.util.Date;
 
 public class Donation {
-    public String donationId, fundraiserId, fundraiserName, donationDesc, donationTitle;
+    public String donationId, fundraiserId, fundraiserName, donationDesc, donationTitle, donationBanner, imageUrl1, imageUrl2, imageUrl3;
     public Date donationStart, donationEnd;
     public Long donationTarget;
 
@@ -73,5 +73,37 @@ public class Donation {
 
     public void setDonationTarget(Long donationTarget) {
         this.donationTarget = donationTarget;
+    }
+
+    public String getDonationBanner() {
+        return donationBanner;
+    }
+
+    public void setDonationBanner(String donationBanner) {
+        this.donationBanner = donationBanner;
+    }
+
+    public String getImageUrl1() {
+        return imageUrl1;
+    }
+
+    public void setImageUrl1(String imageUrl1) {
+        this.imageUrl1 = imageUrl1;
+    }
+
+    public String getImageUrl2() {
+        return imageUrl2;
+    }
+
+    public void setImageUrl2(String imageUrl2) {
+        this.imageUrl2 = imageUrl2;
+    }
+
+    public String getImageUrl3() {
+        return imageUrl3;
+    }
+
+    public void setImageUrl3(String imageUrl3) {
+        this.imageUrl3 = imageUrl3;
     }
 }
