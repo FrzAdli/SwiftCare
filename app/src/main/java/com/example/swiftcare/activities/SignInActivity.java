@@ -21,6 +21,7 @@ import com.example.swiftcare.R;
 import com.example.swiftcare.databinding.ActivitySignInBinding;
 import com.example.swiftcare.fragments.HomeFragment;
 import com.example.swiftcare.utilities.Constants;
+import com.example.swiftcare.utilities.DialogUtils;
 import com.example.swiftcare.utilities.PreferenceManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -76,11 +77,17 @@ public class SignInActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
         binding.layoutSignUp.setOnClickListener( v ->
                 startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
+
         binding.backButtonsignin.setOnClickListener(v ->
             startActivity(new Intent(getApplicationContext(), CTAActivity.class))
         );
+
+        binding.forgotPassword.setOnClickListener(v -> {
+            DialogUtils.showSimpleDialog(this, "Info", "Fitur ini masih dalam pengembangan. Mohon maaf atas ketidaknyamanannya.");
+        });
     }
 
     ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
