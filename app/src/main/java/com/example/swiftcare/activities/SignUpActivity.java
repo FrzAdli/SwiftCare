@@ -23,6 +23,7 @@ import java.util.HashMap;
 public class SignUpActivity extends AppCompatActivity {
     private ActivitySignUpBinding binding;
     private PreferenceManager preferenceManager;
+    private String imageProfileBackground;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class SignUpActivity extends AppCompatActivity {
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
+
+        imageProfileBackground = "https://firebasestorage.googleapis.com/v0/b/swiftcare-86318.appspot.com/o/profileImages%2FdefaultImageProfileBackground.jpg?alt=media&token=b85f84aa-7f0e-4bbd-bc9d-50dd8673274a";
 
         setListener();
 
@@ -59,6 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
         user.put(Constants.KEY_PASSWORD, binding.inputPassword.getText().toString());
         user.put(Constants.KEY_PHONE_NUMBER, binding.inputPhoneNumber.getText().toString());
         user.put(Constants.KEY_IMAGE_PROFILE, defaultProfile);
+        user.put(Constants.KEY_IMAGE_PROFILE_BACKGROUND, imageProfileBackground);
         user.put(Constants.KEY_VERIFIED_STATUS, "Not Verified");
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .add(user)
@@ -70,6 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
                     preferenceManager.putString(Constants.KEY_EMAIL, binding.inputEmail.getText().toString());
                     preferenceManager.putString(Constants.KEY_PHONE_NUMBER, binding.inputPhoneNumber.getText().toString());
                     preferenceManager.putString(Constants.KEY_IMAGE_PROFILE, defaultProfile);
+                    preferenceManager.putString(Constants.KEY_IMAGE_PROFILE_BACKGROUND, imageProfileBackground);
                     Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);

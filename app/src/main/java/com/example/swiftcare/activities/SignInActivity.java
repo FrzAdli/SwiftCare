@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.swiftcare.R;
 import com.example.swiftcare.databinding.ActivitySignInBinding;
+import com.example.swiftcare.fragments.CustomDialogFragment;
 import com.example.swiftcare.fragments.HomeFragment;
 import com.example.swiftcare.utilities.Constants;
 import com.example.swiftcare.utilities.DialogUtils;
@@ -46,6 +48,8 @@ public class SignInActivity extends AppCompatActivity {
     private PreferenceManager preferenceManager;
     private GoogleSignInClient gClient;
     private GoogleSignInOptions gOptions;
+    private String imageProfileBackground;
+    private CustomDialogFragment customDialogFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,10 @@ public class SignInActivity extends AppCompatActivity {
 
         gOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gClient = GoogleSignIn.getClient(this, gOptions);
+
+        customDialogFragment = new CustomDialogFragment();
+
+        imageProfileBackground = "https://firebasestorage.googleapis.com/v0/b/swiftcare-86318.appspot.com/o/profileImages%2FdefaultImageProfileBackground.jpg?alt=media&token=b85f84aa-7f0e-4bbd-bc9d-50dd8673274a";
 
         GoogleSignInAccount gAccount = GoogleSignIn.getLastSignedInAccount(this);
         if(gAccount != null){
@@ -102,12 +110,15 @@ public class SignInActivity extends AppCompatActivity {
                             String username = account.getDisplayName();
                             String imageProfile = account.getPhotoUrl().toString();
 
+                            showLoadingDialog();
                             //Check if user exists
                             checkIfUserExists(email, username, imageProfile);
 
-                            Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
+                            new Handler().postDelayed(() -> {
+                                Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            }, 2000);
                         }
                     } catch (ApiException e){
                         showToast("Something went wrong");
@@ -116,7 +127,7 @@ public class SignInActivity extends AppCompatActivity {
             });
 
     private void signIn() {
-        loadingSignIn(true);
+        showLoadingDialog();
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .whereEqualTo(Constants.KEY_EMAIL, binding.inputEmail.getText().toString())
@@ -131,21 +142,25 @@ public class SignInActivity extends AppCompatActivity {
                         if (documentSnapshot.contains(Constants.KEY_IMAGE_PROFILE)) {
                             preferenceManager.putString(Constants.KEY_IMAGE_PROFILE, documentSnapshot.getString(Constants.KEY_IMAGE_PROFILE));
                         }
+                        if (documentSnapshot.contains(Constants.KEY_IMAGE_PROFILE_BACKGROUND)) {
+                            preferenceManager.putString(Constants.KEY_IMAGE_PROFILE_BACKGROUND, documentSnapshot.getString(Constants.KEY_IMAGE_PROFILE_BACKGROUND));
+                        }
                         if (documentSnapshot.contains(Constants.KEY_PHONE_NUMBER)) {
                             preferenceManager.putString(Constants.KEY_PHONE_NUMBER, documentSnapshot.getString(Constants.KEY_PHONE_NUMBER));
                         }
-                        Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
+                        showFinishDialog(true, "Verification Successfully");
+                        new Handler().postDelayed(() -> {
+                            Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                        }, 2000);
                     } else {
-                        loadingSignIn(false);
-                        showToast("Unable to sign in");
+                        showFinishDialog(false, "Verification Failed");
                     }
                 });
     }
 
     private void checkIfUserExists(String email, String username, String imageProfile) {
-        loadingGoogle(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         CollectionReference usersRef = database.collection("users");
 
@@ -158,15 +173,18 @@ public class SignInActivity extends AppCompatActivity {
                             DocumentSnapshot document = querySnapshot.getDocuments().get(0);
                             preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                             preferenceManager.putString(Constants.KEY_USER_ID, document.getId());
-                            preferenceManager.putString(Constants.KEY_USERNAME, username);
-                            preferenceManager.putString(Constants.KEY_EMAIL, email);
+                            preferenceManager.putString(Constants.KEY_USERNAME, document.getString(Constants.KEY_USERNAME));
+                            preferenceManager.putString(Constants.KEY_EMAIL, document.getString(Constants.KEY_EMAIL));
                             if (document.contains(Constants.KEY_IMAGE_PROFILE)) {
                                 preferenceManager.putString(Constants.KEY_IMAGE_PROFILE, document.getString(Constants.KEY_IMAGE_PROFILE));
+                            }
+                            if (document.contains(Constants.KEY_IMAGE_PROFILE_BACKGROUND)) {
+                                preferenceManager.putString(Constants.KEY_IMAGE_PROFILE_BACKGROUND, document.getString(Constants.KEY_IMAGE_PROFILE_BACKGROUND));
                             }
                             if (document.contains(Constants.KEY_PHONE_NUMBER)) {
                                 preferenceManager.putString(Constants.KEY_PHONE_NUMBER, document.getString(Constants.KEY_PHONE_NUMBER));
                             }
-                            loadingGoogle(false);
+                            showFinishDialog(true, "Verification Successfully");
                         } else {
                             saveUserToFirestore(email, username, imageProfile);
                         }
@@ -185,6 +203,7 @@ public class SignInActivity extends AppCompatActivity {
         user.put(Constants.KEY_EMAIL, email);
         user.put(Constants.KEY_USERNAME, username);
         user.put(Constants.KEY_IMAGE_PROFILE, imageProfile);
+        user.put(Constants.KEY_IMAGE_PROFILE_BACKGROUND, imageProfileBackground);
         user.put(Constants.KEY_VERIFIED_STATUS, "Not Verified");
 
         usersRef.add(user)
@@ -194,29 +213,12 @@ public class SignInActivity extends AppCompatActivity {
                     preferenceManager.putString(Constants.KEY_USERNAME, username);
                     preferenceManager.putString(Constants.KEY_EMAIL, email);
                     preferenceManager.putString(Constants.KEY_IMAGE_PROFILE, imageProfile);
-                    loadingGoogle(false);
+                    preferenceManager.putString(Constants.KEY_IMAGE_PROFILE_BACKGROUND, imageProfileBackground);
+                    showFinishDialog(true, "Verification Successfully");
                 })
-                .addOnFailureListener(e -> showToast("Error saving user data"));
-    }
-
-    private void loadingGoogle(Boolean isLoading) {
-        if(isLoading) {
-            binding.buttonSignInGoogle.setVisibility(View.INVISIBLE);
-            binding.progessBar.setVisibility(View.VISIBLE);
-        } else {
-            binding.progessBar.setVisibility(View.INVISIBLE);
-            binding.buttonSignInGoogle.setVisibility(View.VISIBLE);
-        }
-    }
-
-    private void loadingSignIn(Boolean isLoading) {
-        if(isLoading) {
-            binding.buttonSignIn.setVisibility(View.INVISIBLE);
-            binding.progessBar1.setVisibility(View.VISIBLE);
-        } else {
-            binding.progessBar1.setVisibility(View.INVISIBLE);
-            binding.buttonSignIn.setVisibility(View.VISIBLE);
-        }
+                .addOnFailureListener(e -> {
+                    showFinishDialog(false, "Verification Failed");
+                });
     }
 
     private void showToast(String message) {
@@ -236,5 +238,24 @@ public class SignInActivity extends AppCompatActivity {
         } else {
             return true;
         }
+    }
+
+    private void showLoadingDialog() {
+        customDialogFragment.show(getSupportFragmentManager(), CustomDialogFragment.class.getSimpleName());
+    }
+
+    private void showFinishDialog(Boolean status, String text) {
+        customDialogFragment.binding.progressBar.setVisibility(View.INVISIBLE);
+
+        if(status) {
+            customDialogFragment.binding.messageTextView.setText(text);
+            customDialogFragment.binding.successImage.setVisibility(View.VISIBLE);
+            customDialogFragment.binding.failedImage.setVisibility(View.INVISIBLE);
+        } else {
+            customDialogFragment.binding.messageTextView.setText(text);
+            customDialogFragment.binding.successImage.setVisibility(View.INVISIBLE);
+            customDialogFragment.binding.failedImage.setVisibility(View.VISIBLE);
+        }
+
     }
 }

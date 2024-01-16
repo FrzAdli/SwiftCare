@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.swiftcare.R;
+import com.example.swiftcare.activities.EditProfileActivity;
 import com.example.swiftcare.activities.SignInActivity;
 import com.example.swiftcare.databinding.FragmentProfileBinding;
 import com.example.swiftcare.utilities.Constants;
@@ -36,7 +37,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
  */
 public class ProfileFragment extends Fragment {
 
-    FragmentProfileBinding binding;
+    private FragmentProfileBinding binding;
     private GoogleSignInClient gClient;
     private GoogleSignInOptions gOptions;
     private PreferenceManager preferenceManager;
@@ -98,6 +99,7 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         loadVerifiedStatus();
         loadProfile();
+        setListeners();
         binding.logoutButton.setOnClickListener( v -> {
             gClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -111,8 +113,14 @@ public class ProfileFragment extends Fragment {
         });
     }
 
+    private void setListeners() {
+        binding.EditProfile.setOnClickListener(v ->
+                startActivity(new Intent(requireContext(), EditProfileActivity.class)));
+    }
+
     private void loadProfile() {
         ImageLoader.loadCircleImage(preferenceManager.getString(Constants.KEY_IMAGE_PROFILE), binding.userProfile);
+        ImageLoader.loadImage(preferenceManager.getString(Constants.KEY_IMAGE_PROFILE_BACKGROUND), binding.profileBackground);
         binding.profileName.setText(preferenceManager.getString(Constants.KEY_USERNAME));
     }
 
@@ -126,7 +134,7 @@ public class ProfileFragment extends Fragment {
             userDocument.get().addOnSuccessListener(documentSnapshot -> {
                 if (documentSnapshot.exists()) {
                     String verifiedStatus = documentSnapshot.getString(Constants.KEY_VERIFIED_STATUS);
-                    if (verifiedStatus != null) {
+                    if (verifiedStatus.equals("Verified")) {
                         binding.verified.setText(verifiedStatus);
                         int colorResource = getResources().getColor(R.color.primary_800);
                         ColorStateList colorStateList = ColorStateList.valueOf(colorResource);
