@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:padding="20dp"
+    android:background="@drawable/bg_round_50"
+    android:backgroundTint="@color/white">
+
+    <View
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/neutral_N40"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="Amount"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/neutral_N500"
+        android:textSize="@dimen/_14ssp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/donateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:text="Donation"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/neutral_N200"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:id="@+id/donateAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:text="amount"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/neutral_N300"
+            android:gravity="end"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/contriTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:text="Contribution"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/neutral_N200"
+            android:layout_below="@id/donateTitle"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:id="@+id/contriAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:text="contribution"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/neutral_N300"
+            android:gravity="end"
+            android:layout_below="@id/donateAmount"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/totalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:text="Total"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/neutral_N200"
+            android:layout_below="@id/contriTitle"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:id="@+id/totalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:text="total"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/neutral_N300"
+            android:gravity="end"
+            android:layout_below="@id/contriAmount"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:background="@color/neutral_N30"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:text="Payment Method"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/neutral_N500"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:text="E Wallet"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/neutral_N200"/>
+
+    <!-- E Wallet -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:rowCount="1">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/gopay"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_gopay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Gopay"
+                android:textColor="@color/neutral_N500"
+                android:textSize="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_regular"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dana"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_dana" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Dana"
+                android:textColor="@color/neutral_N500"
+                android:textSize="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_regular"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ovo"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_ovo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Ovo"
+                android:textColor="@color/neutral_N500"
+                android:textSize="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_regular"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/spay"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_spay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Spay"
+                android:textColor="@color/neutral_N500"
+                android:textSize="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_regular"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:background="@color/neutral_N30"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:text="Bank"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/neutral_N200"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="5"
+        android:rowCount="2">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bankBCA"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bca" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bankBNI"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bni" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bankBRI"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bri" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bankMANDIRI"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mandiri" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bankBSI"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bsi" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bankPERMATA"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_permata" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bankCIMB"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cimb" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bankSEA"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/donate_payment_selector"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:elevation="@dimen/_2sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_sea" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Back"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/primary_600"
+            android:backgroundTint="@color/white"
+            app:strokeWidth="@dimen/_1sdp"
+            app:strokeColor="@color/primary_600"
+            app:cornerRadius="@dimen/_20sdp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/paymentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="5sp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Payment"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/primary_600"
+            app:cornerRadius="@dimen/_20sdp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:padding="20dp"
+    android:background="@drawable/bg_round_50"
+    android:id="@+id/bottom_sheet_donation"
+    android:backgroundTint="@color/white">
+
+    <View
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/neutral_N40"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="Choose Donation"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/neutral_N500"
+        android:textSize="@dimen/_14ssp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:rowCount="2">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/amount10"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bg_amount10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/donate_amount_selector"
+                android:backgroundTint="@color/primary_100"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_coin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="10.000"
+                    android:textColor="@color/neutral_N500"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_medium"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/amount20"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bg_amount20"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/donate_amount_selector"
+                android:backgroundTint="@color/primary_100"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_coin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="20.000"
+                    android:textColor="@color/neutral_N500"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_medium"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/amount50"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bg_amount50"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/donate_amount_selector"
+                android:backgroundTint="@color/primary_100"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_coin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="50.000"
+                    android:textColor="@color/neutral_N500"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_medium"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/amount70"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bg_amount70"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/donate_amount_selector"
+                android:backgroundTint="@color/primary_100"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_coin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="70.000"
+                    android:textColor="@color/neutral_N500"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_medium"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/amount100"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_columnWeight="1"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bg_amount100"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/donate_amount_selector"
+                android:backgroundTint="@color/primary_100"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_coin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="100.000"
+                    android:textColor="@color/neutral_N500"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_medium"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:text="Nominal"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/neutral_N500"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputAmount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:background="@drawable/edit_text_input_background_stroke_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/neutral_N500"
+            android:hint="Rp"
+            android:textColorHint="@color/neutral_N500"
+            android:inputType="number"
+            android:imeOptions="actionNext" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titleContribution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:text="Contribution to application"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/neutral_N500"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:text="optional"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/secondary_800"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/titleContribution"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputContribution"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:background="@drawable/edit_text_input_background_stroke_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/neutral_N500"
+            android:hint="Rp"
+            android:textColorHint="@color/neutral_N500"
+            android:inputType="number"
+            android:imeOptions="actionNext" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:text="Comment"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/neutral_N500"/>
+
+    <EditText
+        android:id="@+id/inputComment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:background="@drawable/edit_text_input_background_stroke_rounded"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/neutral_N500"
+        android:hint="Type your message"
+        android:textColorHint="@color/neutral_N60"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:imeOptions="actionDone"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="CONTINUE"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/primary_600"
+        app:cornerRadius="@dimen/_20sdp"/>
+
+</LinearLayout>
