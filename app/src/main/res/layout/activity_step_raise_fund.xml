@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.StepRaiseFundActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/hsv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="10dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+
+                    android:contextClickable="false"
+                    android:id="@+id/step1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/step1" />
+
+                <ImageView
+                    android:id="@+id/arrow1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_toRightOf="@+id/step1"
+                    android:src="@drawable/arrow"/>
+
+                <ImageView
+                    android:id="@+id/step2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/arrow1"
+                    android:src="@drawable/unstep2" />
+
+                <ImageView
+                    android:id="@+id/arrow2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_toRightOf="@+id/step2"
+                    android:src="@drawable/arrow"/>
+
+                <ImageView
+                    android:id="@+id/step3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toRightOf="@+id/arrow2"
+                    android:src="@drawable/unstep3" />
+
+                <ImageView
+                    android:id="@+id/arrow3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_toRightOf="@+id/step3"
+                    android:src="@drawable/arrow"/>
+
+                <ImageView
+                    android:id="@+id/step4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toRightOf="@+id/arrow3"
+                    android:src="@drawable/unstep4" />
+
+                <ImageView
+                    android:id="@+id/arrow4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_toRightOf="@+id/step4"
+                    android:src="@drawable/arrow"/>
+
+                <ImageView
+                    android:id="@+id/step5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toRightOf="@+id/arrow4"
+                    android:src="@drawable/unstep5" />
+
+                <ImageView
+                    android:id="@+id/arrow5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_toRightOf="@+id/step5"
+                    android:src="@drawable/arrow"/>
+
+                <ImageView
+                    android:id="@+id/step6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toRightOf="@+id/arrow5"
+                    android:src="@drawable/unstep6" />
+
+
+
+
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/hsv_1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

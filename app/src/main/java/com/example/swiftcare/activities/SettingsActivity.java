@@ -2,23 +2,18 @@ package com.example.swiftcare.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.swiftcare.databinding.ActivityRaisefundBinding;
+import com.example.swiftcare.databinding.ActivitySettingsBinding;
 
-public class RaisefundActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
-    ActivityRaisefundBinding binding;
+    ActivitySettingsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityRaisefundBinding.inflate(getLayoutInflater());
+        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
     }
-
-
 }

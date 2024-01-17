@@ -200,14 +200,14 @@
             android:fontFamily="@font/poppins_regular"
             android:textAllCaps="false"
             android:text="Donation History"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/neutral_N300"
             android:background="@drawable/background_stroke"
             android:elevation="@dimen/_10sdp"
             />
 
         <Button
-            android:id="@+id/Settings"
+            android:id="@+id/btnSettings"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/_10sdp"
@@ -220,7 +220,7 @@
             android:fontFamily="@font/poppins_regular"
             android:textAllCaps="false"
             android:text="Settings"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/neutral_N300"
             android:background="#e100d5" />
         <Button
@@ -238,7 +238,7 @@
             android:fontFamily="@font/poppins_regular"
             android:textAllCaps="false"
             android:text="Help"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/neutral_N300"
             android:background="#e100d5" />
 
@@ -252,13 +252,12 @@
             android:layout_marginBottom="4dp"
             android:gravity="start"
             android:drawableLeft="@drawable/ic_logout"
-            android:drawableRight="@drawable/ic_back_reverse_big"
             app:iconPadding="@dimen/_9sdp"
             app:backgroundTint="@color/white"
             android:fontFamily="@font/poppins_regular"
             android:textAllCaps="false"
             android:text="Logout"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/red_D200"
             android:background="@drawable/background_stroke"
             android:elevation="@dimen/_10sdp"

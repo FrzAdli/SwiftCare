@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_100sdp"
         android:adjustViewBounds="true"
-        android:src="@drawable/bg_cta2"
+        android:src="@drawable/bg_bawah_cta"
         app:layout_constraintTop_toBottomOf="@id/mainBackgroundupper"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
