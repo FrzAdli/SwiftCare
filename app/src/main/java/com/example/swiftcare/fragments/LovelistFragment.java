@@ -190,15 +190,17 @@ public class LovelistFragment extends Fragment {
     }
 
     private void updateUIWithLikedDonations() {
-        if (donationList != null && !donationList.isEmpty()) {
-            loading(false);
-            binding.noFavorite.setVisibility(View.INVISIBLE);
-            binding.lovelistRecyclerView.setVisibility(View.VISIBLE);
-            lovelistAdapter = new LovelistAdapter(requireContext(), donationList);
-            binding.lovelistRecyclerView.setAdapter(lovelistAdapter);
-        } else {
-            loading(false);
-            showNoLikedDonationsMessage();
+        if (isAdded() && getContext() != null) {
+            if (donationList != null && !donationList.isEmpty()) {
+                loading(false);
+                binding.noFavorite.setVisibility(View.INVISIBLE);
+                binding.lovelistRecyclerView.setVisibility(View.VISIBLE);
+                lovelistAdapter = new LovelistAdapter(requireContext(), donationList);
+                binding.lovelistRecyclerView.setAdapter(lovelistAdapter);
+            } else {
+                loading(false);
+                showNoLikedDonationsMessage();
+            }
         }
     }
 

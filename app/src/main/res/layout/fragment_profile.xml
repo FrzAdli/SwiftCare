@@ -125,7 +125,6 @@
             android:id="@+id/profileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
             android:layout_marginStart="@dimen/_16sdp"
             android:text="Orang Baik"
             android:textStyle="bold"
@@ -140,35 +139,34 @@
             android:id="@+id/verified"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_8sdp"
-            android:layout_marginTop="9dp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:backgroundTint="@color/not_verified"
             android:fontFamily="@font/poppins_regular"
             android:textSize="11dp"
             android:textColor="@color/white"
             android:paddingHorizontal="@dimen/_9sdp"
             android:text="Not Verified"
+            android:gravity="center"
             android:background="@drawable/bg_round_rec"
-            android:layout_toEndOf="@id/profileName"
-            />
+            android:layout_toEndOf="@id/EditProfile"
+            android:layout_below="@id/profileName"/>
 
         <TextView
             android:id="@+id/EditProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginTop="35dp"
+            android:padding="@dimen/_2sdp"
             android:text="Edit profile"
             android:textSize="@dimen/_10ssp"
             android:textColor="#BFBFBF"
             android:fontFamily="@font/poppins_regular"
-            android:gravity="center_vertical"
+            android:gravity="end"
             android:drawablePadding="@dimen/_4sdp"
             android:drawableEnd="@drawable/ic_back_reverse"
             android:layout_toEndOf="@id/photoprofile"
+            android:layout_alignBottom="@id/photoprofile"
             />
-
-
 
 
     </RelativeLayout>

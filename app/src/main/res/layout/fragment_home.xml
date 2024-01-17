@@ -73,7 +73,7 @@
         android:paddingTop="@dimen/_2sdp"
         android:paddingStart="@dimen/_15sdp"
         android:paddingEnd="@dimen/_15sdp"
-        android:textColor="@color/primary_600"
+        android:textColor="@color/neutral_N500"
         android:textColorHint="@color/neutral_N60"
         android:textSize="@dimen/_10sdp"
         app:layout_constraintStart_toEndOf="@id/imagesc"
@@ -84,6 +84,7 @@
         android:id="@+id/sc_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_container"
         android:scrollbars="none">
