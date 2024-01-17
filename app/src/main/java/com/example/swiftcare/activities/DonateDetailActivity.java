@@ -9,21 +9,22 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.swiftcare.R;
 import com.example.swiftcare.adapters.DonateDetailAdapter;
 import com.example.swiftcare.databinding.ActivityDonateDetailBinding;
+import com.example.swiftcare.fragments.BottomSheetDonationFragment;
 import com.example.swiftcare.fragments.DescriptionFragment;
 import com.example.swiftcare.fragments.LatestnewsFragment;
 import com.example.swiftcare.fragments.VolunteerFragment;
 import com.example.swiftcare.utilities.Constants;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -49,6 +50,16 @@ public class DonateDetailActivity extends AppCompatActivity {
         imageSlider();
         loadDetail();
         setFragment();
+        setListeners();
+    }
+
+    private void setListeners() {
+        binding.donateLayout.setOnClickListener(v -> {
+            BottomSheetDonationFragment bottomSheetDonationFragment = new BottomSheetDonationFragment();
+            bottomSheetDonationFragment.show(getSupportFragmentManager(), bottomSheetDonationFragment.getTag());
+        });
+
+
     }
 
     private void loadDetail() {
