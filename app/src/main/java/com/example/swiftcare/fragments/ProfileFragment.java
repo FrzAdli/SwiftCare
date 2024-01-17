@@ -16,7 +16,9 @@ import android.view.ViewGroup;
 
 import com.example.swiftcare.R;
 import com.example.swiftcare.activities.EditProfileActivity;
+import com.example.swiftcare.activities.SettingsActivity;
 import com.example.swiftcare.activities.SignInActivity;
+import com.example.swiftcare.databinding.ActivitySettingsBinding;
 import com.example.swiftcare.databinding.FragmentProfileBinding;
 import com.example.swiftcare.utilities.Constants;
 import com.example.swiftcare.utilities.ImageLoader;
@@ -111,11 +113,16 @@ public class ProfileFragment extends Fragment {
                 }
             });
         });
+
+
     }
 
     private void setListeners() {
         binding.EditProfile.setOnClickListener(v ->
                 startActivity(new Intent(requireContext(), EditProfileActivity.class)));
+
+        binding.btnSettings.setOnClickListener(v ->
+                startActivity(new Intent(requireContext(), SettingsActivity.class)));
     }
 
     private void loadProfile() {

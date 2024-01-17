@@ -93,7 +93,7 @@
                     android:animateLayoutChanges="true">
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/buttonSignUp"
+                        android:id="@+id/buttonFundaraiser"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
                         android:layout_marginStart="26dp"
