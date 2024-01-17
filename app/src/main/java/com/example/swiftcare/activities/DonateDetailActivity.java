@@ -21,9 +21,17 @@ import com.example.swiftcare.fragments.DescriptionFragment;
 import com.example.swiftcare.fragments.LatestnewsFragment;
 import com.example.swiftcare.fragments.VolunteerFragment;
 import com.example.swiftcare.utilities.Constants;
+import com.example.swiftcare.utilities.PreferenceManager;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -40,12 +48,20 @@ public class DonateDetailActivity extends AppCompatActivity {
     private DescriptionFragment descriptionFragment;
     private LatestnewsFragment latestnewsFragment;
     private VolunteerFragment volunteerFragment;
+    private FirebaseDatabase database;
+    private DatabaseReference rootRef;
+    private PreferenceManager preferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDonateDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        preferenceManager = new PreferenceManager(getApplicationContext());
+
+        database = FirebaseDatabase.getInstance();
+        rootRef = database.getReference();
 
         imageSlider();
         loadDetail();
@@ -60,6 +76,9 @@ public class DonateDetailActivity extends AppCompatActivity {
         });
 
 
+        binding.icLove.setOnClickListener(v -> {
+            lovePost();
+        });
     }
 
     private void loadDetail() {
@@ -78,6 +97,27 @@ public class DonateDetailActivity extends AppCompatActivity {
 
         binding.fundTarget.setText(getIntent().getExtras().getString(Constants.KEY_DONATION_TARGET));
         binding.fundraiserName.setText(getIntent().getExtras().getString(Constants.KEY_FUNDRAISER_NAME));
+
+        String userId = preferenceManager.getString(Constants.KEY_USER_ID);
+        DatabaseReference loveListRef = rootRef.child("loveList").child(getIntent().getExtras().getString(Constants.KEY_DONATION_ID));
+
+        if (userId != null) {
+            loveListRef.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        binding.icLove.setImageResource(R.drawable.ic_love);
+                    } else {
+                        binding.icLove.setImageResource(R.drawable.ic_love_stroke);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
 
     }
 
@@ -153,11 +193,6 @@ public class DonateDetailActivity extends AppCompatActivity {
 
             int fragmentHeight = fragmentView.getMeasuredHeight();
 
-            Log.d("FragmentWidth", "Width of fragment at position " + position + ": " + fragmentView.getMeasuredWidth());
-            Log.d("FragmentHeight", "Height of fragment at position " + position + ": " + fragmentHeight);
-
-            Log.d("FragmentWidth", "Width of fragment at position " + position + ": " + fragmentView.getWidth());
-
             ViewGroup.LayoutParams layoutParams = binding.vP2.getLayoutParams();
             if(fragmentHeight < 450) {
                 layoutParams.height = 500;
@@ -211,4 +246,31 @@ public class DonateDetailActivity extends AppCompatActivity {
         binding.imageSlider.setImageList(slideModels);
 
     }
+
+    private void lovePost() {
+        String userId = preferenceManager.getString(Constants.KEY_USER_ID);
+
+        if (userId != null) {
+            DatabaseReference loveListRef = rootRef.child("loveList").child(getIntent().getExtras().getString(Constants.KEY_DONATION_ID));
+
+            loveListRef.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        binding.icLove.setImageResource(R.drawable.ic_love_stroke);
+                        loveListRef.child(userId).removeValue();
+                    } else {
+                        binding.icLove.setImageResource(R.drawable.ic_love);
+                        loveListRef.child(userId).setValue(true);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+    }
+
 }

@@ -32,67 +32,75 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/_25sdp"
             android:layout_marginEnd="@dimen/_16sdp"
-            android:src="@drawable/ic_bell"
-
-            />
-
-
+            android:src="@drawable/ic_bell" />
     </RelativeLayout>
-    <EditText
+
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/search_container"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="@dimen/_27sdp"
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:background="@drawable/edit_text_background_stroke"
         android:drawableStart="@drawable/ic_search_new"
         android:drawablePadding="@dimen/_8sdp"
-        android:hint="Search donation you want"
+        app:queryHint="Search donation you want"
+        app:iconifiedByDefault="false"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
         android:maxLines="1"
-        android:paddingStart="@dimen/_10sdp"
         android:paddingTop="@dimen/_2sdp"
         android:paddingEnd="@dimen/_15sdp"
         android:singleLine="true"
         android:textColor="@color/primary_600"
         android:textColorHint="@color/neutral_N60"
         android:textSize="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/header" />
 
-        />
-    
-    <ScrollView
+    <!--    RecylerView-->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/search_container">
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/search_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lovelistRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:scrollbars="none" />
 
-            <ImageView
-                android:layout_width="206dp"
-                android:layout_height="261dp"
-                android:layout_margin="@dimen/_100sdp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/bg_lovelist"
-                android:visibility="visible"
-                />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <ImageView
+        android:id="@+id/noFavorite"
+        android:layout_width="206dp"
+        android:layout_height="261dp"
+        android:layout_margin="@dimen/_100sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/bg_lovelist"
+        android:visibility="visible" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-    </ScrollView>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/primary_600"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
