@@ -98,12 +98,13 @@
 
                 <ImageView
                     android:id="@+id/ic_love"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:src="@drawable/ic_love"
+                    android:src="@drawable/ic_love_stroke"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignBottom="@id/donationTitle"/>
+                    android:layout_alignBottom="@id/donationTitle"
+                    app:tint="@color/primary_600" />
 
                 <TextView
                     android:id="@+id/collected"

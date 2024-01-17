@@ -135,7 +135,7 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_30sdp"
+        android:layout_height="@dimen/_27sdp"
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:background="@drawable/edit_text_background_stroke"
@@ -153,9 +153,7 @@
         android:textColor="@color/primary_600"
         android:textColorHint="@color/neutral_N60"
         android:textSize="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/category"
-
-        />
+        app:layout_constraintTop_toBottomOf="@id/category" />
 
     <ImageView
         android:id="@+id/banner"
