@@ -37,9 +37,9 @@ git clone https://github.com/setiadyanwar/SwiftCare.git
 6. Click the "Run" button or press `Shift + F10` to run the application on the virtual device or emulator.
    You can also use a physical device by turning on USB debugging on the device, and connecting the USB to the computer
 
-You can also download the initial stage of our application via the following link [Download Here](https://www.mediafire.com/file/qf3l794e22zgaps/app-debug.apk/file)
+You can also download the initial stage of our application via the following link [here](https://www.mediafire.com/file/qf3l794e22zgaps/app-debug.apk/file)
 ### :pushpin: Note
-When running the application, Signing In with Google will cause an error because we need to register the SHA Key for each device into Firebase. We recommend creating a manual account via Sign Up.>
+When running the application, Signing In with Google will cause an error because we need to register the SHA Key for each device into Firebase. We recommend creating a manual account via Sign Up.
 
 
 <!-- Feature Screenshots -->
