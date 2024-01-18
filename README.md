@@ -15,7 +15,7 @@
 
 <!-- ABOUT SwiftCare-->
 ## About SwiftCare
-The challenge is to address inefficiencies and barriers in the current funding and social support landscape. Despite various charities and organizations, there is still a lack of a centralized and efficient platform that enables seamless, timely, and reliable giving while facilitating direct participation in social action.
+As we create apps to achieve shared prosperity and strive for a more accurate and efficient donation process, we face various challenges. Lack of user trust, especially regarding the security of money management, is a hurdle, and addressing concerns and uncertainties is important to encourage wider community participation. In addition, difficulties in fundraising, such as campaign management and promotion issues, can affect the overall effectiveness of the app in achieving its goals.
 
 Our application aims to address this challenge by providing a user-friendly platform that promotes collective well-being through sharing and supporting those in need. The purpose of this application is to streamline the donation process and make it more accurate, faster, and reliable. Users can easily donate money or start a fundraiser to support various social causes, and the intended recipient quickly receives their efforts.
 
