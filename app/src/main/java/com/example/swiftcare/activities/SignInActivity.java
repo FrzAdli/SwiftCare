@@ -24,6 +24,7 @@ import com.example.swiftcare.fragments.CustomDialogFragment;
 import com.example.swiftcare.fragments.HomeFragment;
 import com.example.swiftcare.utilities.Constants;
 import com.example.swiftcare.utilities.DialogUtils;
+import com.example.swiftcare.utilities.MD5Hash;
 import com.example.swiftcare.utilities.PreferenceManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -131,7 +132,7 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .whereEqualTo(Constants.KEY_EMAIL, binding.inputEmail.getText().toString())
-                .whereEqualTo(Constants.KEY_PASSWORD, binding.inputPassword.getText().toString())
+                .whereEqualTo(Constants.KEY_PASSWORD, MD5Hash.md5(binding.inputPassword.getText().toString()))
                 .get()
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful() && task.getResult() != null

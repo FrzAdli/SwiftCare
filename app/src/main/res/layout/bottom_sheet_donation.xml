@@ -45,7 +45,8 @@
             android:layout_columnWeight="1"
             app:cardCornerRadius="@dimen/_5sdp"
             app:strokeColor="@color/white"
-            app:strokeWidth="@dimen/_1sdp">
+            app:strokeWidth="@dimen/_1sdp"
+            android:tag="10000">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/bg_amount10"
@@ -86,7 +87,8 @@
             android:layout_columnWeight="1"
             app:cardCornerRadius="@dimen/_5sdp"
             app:strokeColor="@color/white"
-            app:strokeWidth="@dimen/_1sdp">
+            app:strokeWidth="@dimen/_1sdp"
+            android:tag="20000">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/bg_amount20"
@@ -127,7 +129,8 @@
             android:layout_columnWeight="1"
             app:cardCornerRadius="@dimen/_5sdp"
             app:strokeColor="@color/white"
-            app:strokeWidth="@dimen/_1sdp">
+            app:strokeWidth="@dimen/_1sdp"
+            android:tag="50000">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/bg_amount50"
@@ -168,7 +171,8 @@
             android:layout_columnWeight="1"
             app:cardCornerRadius="@dimen/_5sdp"
             app:strokeColor="@color/white"
-            app:strokeWidth="@dimen/_1sdp">
+            app:strokeWidth="@dimen/_1sdp"
+            android:tag="70000">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/bg_amount70"
@@ -209,7 +213,8 @@
             android:layout_columnWeight="1"
             app:cardCornerRadius="@dimen/_5sdp"
             app:strokeColor="@color/white"
-            app:strokeWidth="@dimen/_1sdp">
+            app:strokeWidth="@dimen/_1sdp"
+            android:tag="100000">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/bg_amount100"

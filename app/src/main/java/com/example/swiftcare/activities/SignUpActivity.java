@@ -13,6 +13,7 @@ import com.example.swiftcare.activities.CTAActivity;
 import com.example.swiftcare.activities.SignInActivity;
 import com.example.swiftcare.databinding.ActivitySignUpBinding;
 import com.example.swiftcare.utilities.Constants;
+import com.example.swiftcare.utilities.MD5Hash;
 import com.example.swiftcare.utilities.PreferenceManager;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -59,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
         String defaultProfile = "https://firebasestorage.googleapis.com/v0/b/swiftcare-86318.appspot.com/o/profileImages%2FdefaultProfile.png?alt=media&token=6533709d-83be-4585-81b7-2d2efdb06576";
         user.put(Constants.KEY_USERNAME, getUsernameFromEmail());
         user.put(Constants.KEY_EMAIL, binding.inputEmail.getText().toString());
-        user.put(Constants.KEY_PASSWORD, binding.inputPassword.getText().toString());
+        user.put(Constants.KEY_PASSWORD, MD5Hash.md5(binding.inputPassword.getText().toString()));
         user.put(Constants.KEY_PHONE_NUMBER, binding.inputPhoneNumber.getText().toString());
         user.put(Constants.KEY_IMAGE_PROFILE, defaultProfile);
         user.put(Constants.KEY_IMAGE_PROFILE_BACKGROUND, imageProfileBackground);

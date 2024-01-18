@@ -25,14 +25,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/backButtonsignin"
+                android:id="@+id/backButton"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:onClick="aksi_klik_back"
                 android:src="@drawable/ic_back"
                 app:tint="@color/neutral_N500" />
 
@@ -41,9 +40,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/_18sdp"
-                android:layout_toEndOf="@+id/backButtonsignin"
+                android:layout_toEndOf="@+id/backButton"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Detail"
+                android:text="Raise Fund"
                 android:textColor="@color/neutral_N500"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="bold" />

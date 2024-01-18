@@ -17,6 +17,8 @@ public class RaisefundActivity extends AppCompatActivity {
         binding = ActivityRaisefundBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.buttonFundaraiser.setOnClickListener(v ->
+                startActivity(new Intent(getApplicationContext(), FundraiserForm.class)));
 
     }
 
