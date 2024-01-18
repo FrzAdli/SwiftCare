@@ -45,11 +45,11 @@ When running the application, Signing In with Google sometimes will cause an err
 <!-- Feature Screenshots -->
 ## Feature Screenshots
 ### Authentication
-<img src="images/CTA.jpg" alt="CTA" width="225" height="400"> <img src="images/SignUp.jpg" alt="SignUp" width="225" height="400"> <img src="images/SignIn.jpg" alt="SignIn" width="225" height="400">
+<img src="images/CTA.jpg" alt="CTA" width="196" height="460"> <img src="images/SignUp.jpg" alt="SignUp" width="196" height="460"> <img src="images/SignIn.jpg" alt="SignIn" width="196" height="460">
 
 
 ### Home Page
-<img src="images/Homepage.jpg" alt="Home" width="225" height="400">
+<img src="images/Homepage.jpg" alt="Home" width="196" height="460">
 
 ### Donation Page
 <img src="images/Donation.jpg" alt="Donation" width="196" height="460"> <img src="images/DonationDetail.jpg" alt="DonationDetail" width="196" height="460"> <img src="images/DonationDescription.jpg" alt="DonationDescription" width="196" height="460"> <img src="images/DonationLatestNews.jpg" alt="DonationLatestNews" width="196" height="460"> <img src="images/DonationVolunteer.jpg" alt="DonationVolunteer" width="196" height="460"> <img src="images/DonationAmount.jpg" alt="DonationAmount" width="196" height="460"> <img src="images/DonationPayment.jpg" alt="DonationPayment" width="196" height="460">
