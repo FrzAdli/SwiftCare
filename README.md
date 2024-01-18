@@ -68,9 +68,9 @@ When running the application, Signing In with Google sometimes will cause an err
 - [x] ![](https://geps.dev/progress/90) Authentication
 - [x] ![](https://geps.dev/progress/100) Homepage
 - [x] ![](https://geps.dev/progress/90) Donation
-- [ ] ![](https://geps.dev/progress/100) LoveList
-- [ ] ![](https://geps.dev/progress/90) Profile 
-- [ ] ![](https://geps.dev/progress/40) RaiseFund
+- [x] ![](https://geps.dev/progress/100) LoveList
+- [x] ![](https://geps.dev/progress/90) Profile 
+- [x] ![](https://geps.dev/progress/40) RaiseFund
 - [ ] ![](https://geps.dev/progress/0) Data Information
 - [ ] ![](https://geps.dev/progress/0) Donation Schedule
 - [ ] ![](https://geps.dev/progress/0) Community
