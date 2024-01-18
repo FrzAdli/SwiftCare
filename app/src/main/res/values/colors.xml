@@ -23,7 +23,9 @@
     <color name="primary_50">#E6FEF0</color>
     <color name="primary_100">#B0FAD0</color>
     <color name="primary_200">#8AF8BA</color>
+    <color name="primary_300">#54F59A</color>
     <color name="primary_400">#33F386</color>
+    <color name="primary_500">#00F068</color>
     <color name="primary_600">#00DA5F</color>
     <color name="primary_700">#00AA4A</color>
     <color name="primary_800">#008439</color>

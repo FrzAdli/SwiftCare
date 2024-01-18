@@ -55,6 +55,7 @@ public class BottomSheetDonationFragment extends BottomSheetDialogFragment {
             BottomSheetPaymentFragment bottomSheetPaymentFragment = new BottomSheetPaymentFragment();
             bottomSheetPaymentFragment.show(getParentFragmentManager(), bottomSheetPaymentFragment.getTag());
         });
+
     }
 
     private void handleCardViewClick(CardView clickedCardView) {
@@ -72,6 +73,11 @@ public class BottomSheetDonationFragment extends BottomSheetDialogFragment {
                     ContextCompat.getColor(requireContext(), R.color.primary_100);
 
             bgAmount.setBackgroundTintList(ColorStateList.valueOf(backgroundTint));
+
+            if (cardView.getId() == clickedCardView.getId()) {
+                String amountText = cardView.getTag().toString();
+                binding.inputAmount.setText(amountText);
+            }
         }
     }
 

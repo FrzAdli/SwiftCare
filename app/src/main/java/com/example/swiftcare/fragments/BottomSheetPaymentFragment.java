@@ -60,6 +60,13 @@ public class BottomSheetPaymentFragment extends BottomSheetDialogFragment {
             BottomSheetDonationFragment bottomSheetDonationFragment = new BottomSheetDonationFragment();
             bottomSheetDonationFragment.show(getParentFragmentManager(), bottomSheetDonationFragment.getTag());
         });
+
+        binding.paymentButton.setOnClickListener(v -> {
+            CustomDialogSuccessPayment successDialog = new CustomDialogSuccessPayment();
+            successDialog.show(getChildFragmentManager(), "SuccessDialog");
+
+            successDialog.setSuccessCondition();
+        });
     }
 
     private void handleCardViewClick(CardView clickedCardView) {
