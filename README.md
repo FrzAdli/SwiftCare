@@ -39,7 +39,9 @@ git clone https://github.com/setiadyanwar/SwiftCare.git
 
 You can also download the initial stage of our application via the following link [Download Here](https://www.mediafire.com/file/qf3l794e22zgaps/app-debug.apk/file)
 ### Note:
-<span style="color:red;">When running the application, Signing In with Google will cause an error because we need to register the SHA Key for each device into Firebase. We recommend creating a manual account via Sign Up.</span>
+```diff
+- When running the application, Signing In with Google will cause an error because we need to register the SHA Key for each device into Firebase. We recommend creating a manual account via Sign Up.</span>
+```
 
 
 <!-- Feature Screenshots -->
