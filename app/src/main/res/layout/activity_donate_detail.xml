@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_donatedetail"
     android:fitsSystemWindows="true"
     tools:context=".activities.DonateDetailActivity">
 
@@ -26,22 +25,21 @@
             android:gravity="fill_horizontal">
 
             <ImageButton
-                android:id="@+id/backButtonsignin"
+                android:id="@+id/backButton"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/ic_back"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:onClick="aksi_klik_back"/>
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/_18sdp"
-                android:layout_toEndOf="@+id/backButtonsignin"
+                android:layout_toEndOf="@+id/backButton"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Detail"
                 android:textColor="@color/primary_600"
@@ -69,6 +67,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_donatedetail"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -272,7 +271,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_10sdp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 style="@style/donateDetailTabLayout"
                 app:tabMode="fixed"
                 app:tabGravity="fill"
@@ -285,7 +284,192 @@
                 android:id="@+id/vP2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:layout_marginHorizontal="@dimen/_10sdp" />
+
+            <ImageView
+                android:id="@+id/line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/line00"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/commentTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_alignParentStart="true"
+                    android:text="Comment (40)"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/neutral_N500"
+                    android:fontFamily="@font/poppins_semi_bold" />
+
+                <TextView
+                    android:id="@+id/seeMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:text="See more"
+                    android:drawableEnd="@drawable/arrow"
+                    android:drawableTint="@color/neutral_N80"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/neutral_N80"
+                    android:fontFamily="@font/poppins_regular" />
+
+            </RelativeLayout>
+
+            <!-- Dummy Comment -->
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:background="@color/white" >
+                <ImageView
+                    android:id="@+id/dummyProfile1"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/photo_profile"/>
+                <TextView
+                    android:id="@+id/dummyName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toEndOf="@id/dummyProfile1"
+                    android:text="Orang Baik"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColor="@color/neutral_N500"
+                    android:fontFamily="@font/poppins_semi_bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@id/dummyName1"
+                    android:text="2 days ago"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/neutral_N60"
+                    android:fontFamily="@font/poppins_regular"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toEndOf="@id/dummyProfile1"
+                    android:layout_below="@id/dummyName1"
+                    android:text="Semoga membantu dan bermanfaat bagi para korban"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/neutral_N60"
+                    android:fontFamily="@font/poppins_regular"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/neutral_N20" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:background="@color/white" >
+                <ImageView
+                    android:id="@+id/dummyProfile2"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/photo_profile"/>
+                <TextView
+                    android:id="@+id/dummyName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toEndOf="@id/dummyProfile2"
+                    android:text="Orang Baik"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColor="@color/neutral_N500"
+                    android:fontFamily="@font/poppins_semi_bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@id/dummyName2"
+                    android:text="2 days ago"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/neutral_N60"
+                    android:fontFamily="@font/poppins_regular"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toEndOf="@id/dummyProfile2"
+                    android:layout_below="@id/dummyName2"
+                    android:text="Semoga membantu dan bermanfaat bagi para korban"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/neutral_N60"
+                    android:fontFamily="@font/poppins_regular"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/neutral_N20" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:background="@color/white" >
+                <ImageView
+                    android:id="@+id/dummyProfile3"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/photo_profile"/>
+                <TextView
+                    android:id="@+id/dummyName3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toEndOf="@id/dummyProfile3"
+                    android:text="Orang Baik"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColor="@color/neutral_N500"
+                    android:fontFamily="@font/poppins_semi_bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@id/dummyName3"
+                    android:text="2 days ago"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/neutral_N60"
+                    android:fontFamily="@font/poppins_regular"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toEndOf="@id/dummyProfile3"
+                    android:layout_below="@id/dummyName3"
+                    android:text="Semoga membantu dan bermanfaat bagi para korban"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/neutral_N60"
+                    android:fontFamily="@font/poppins_regular"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/neutral_N20" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/comment"
