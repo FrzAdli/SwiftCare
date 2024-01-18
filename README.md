@@ -19,6 +19,27 @@ The challenge is to address inefficiencies and barriers in the current funding a
 
 Our application aims to address this challenge by providing a user-friendly platform that promotes collective well-being through sharing and supporting those in need. The purpose of this application is to streamline the donation process and make it more accurate, faster, and reliable. Users can easily donate money or start a fundraiser to support various social causes, and the intended recipient quickly receives their efforts.
 
+<!-- Guide -->
+## Guide to Run Project
+### Precondition
+- [Android Studio](https://developer.android.com/studio) installed.
+
+### Step
+#### Clone or download & extract the ZIP file
+```bash
+git clone https://github.com/setiadyanwar/SwiftCare.git
+```
+You can also fork this project.
+
+#### Open in Android Studio
+1. Open Android Studio.
+2. Select "Open an Existing Android Studio Project" if you clone/download ZIP
+   Select the downloaded project directory.
+3. If forked, then select "Get from VCS" and select the repository (make sure Android Studio is connected to your GitHub)
+4. Wait until Android Studio completes the sync and builds the project.
+6. Click the "Run" button or press `Shift + F10` to run the application on the device or emulator.
+   You can also use a physical device by turning on USB debugging on the device, and connecting the USB to the computer
+
 <!-- Feature Screenshots -->
 ## Feature Screenshots
 ### Authentication
@@ -34,12 +55,12 @@ Our application aims to address this challenge by providing a user-friendly plat
 
 <!-- Progress -->
 ## Progress
-- [x] ![](https://geps.dev/progress/70) Authentication
-- [x] ![](https://geps.dev/progress/30) Homepage
-- [x] ![](https://geps.dev/progress/20) Donation
-- [ ] ![](https://geps.dev/progress/0) LoveList
-- [ ] ![](https://geps.dev/progress/0) Profile 
-- [ ] ![](https://geps.dev/progress/0) RaiseFund
+- [x] ![](https://geps.dev/progress/90) Authentication
+- [x] ![](https://geps.dev/progress/75) Homepage
+- [x] ![](https://geps.dev/progress/90) Donation
+- [ ] ![](https://geps.dev/progress/100) LoveList
+- [ ] ![](https://geps.dev/progress/90) Profile 
+- [ ] ![](https://geps.dev/progress/30) RaiseFund
 - [ ] ![](https://geps.dev/progress/0) Data Information
 - [ ] ![](https://geps.dev/progress/0) Donation Schedule
 - [ ] ![](https://geps.dev/progress/0) Community
