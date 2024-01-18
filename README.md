@@ -21,10 +21,10 @@ Our application aims to address this challenge by providing a user-friendly plat
 
 <!-- Guide -->
 ## Guide to Run Project
-### Precondition
-- [Android Studio](https://developer.android.com/studio) installed.
+- Precondition
+  [Android Studio](https://developer.android.com/studio) installed.
 
-### Step
+- Step
 #### Clone or download & extract the ZIP file
 ```bash
 git clone https://github.com/setiadyanwar/SwiftCare.git
@@ -33,7 +33,7 @@ You can also fork this project.
 
 #### Open in Android Studio
 1. Open Android Studio.
-2. Select "Open an Existing Android Studio Project" if you clone/download ZIP
+2. Select "Open an Existing Android Studio Project" if you clone/download ZIP.
    Select the downloaded project directory.
 3. If forked, then select "Get from VCS" and select the repository (make sure Android Studio is connected to your GitHub)
 4. Wait until Android Studio completes the sync and builds the project.
