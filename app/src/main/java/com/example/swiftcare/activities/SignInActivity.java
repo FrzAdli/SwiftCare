@@ -94,7 +94,7 @@ public class SignInActivity extends AppCompatActivity {
         );
 
         binding.forgotPassword.setOnClickListener(v -> {
-            DialogUtils.showSimpleDialog(this, "Info", "Fitur ini masih dalam pengembangan. Mohon maaf atas ketidaknyamanannya.");
+            DialogUtils.showSimpleDialog(this, "Information", "This feature is still under development. Sorry for the inconvenience.");
         });
     }
 

@@ -140,9 +140,9 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/howtoraisefund" />
+
             </RelativeLayout>
         </LinearLayout>
-
 
     </ScrollView>
 

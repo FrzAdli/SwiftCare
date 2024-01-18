@@ -8,19 +8,17 @@
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/imageSlider"
-        android:layout_width="411dp"
-        android:layout_height="400dp"
+        android:layout_width="@dimen/_400sdp"
+        android:layout_height="@dimen/_250sdp"
         app:iss_auto_cycle="true"
         app:iss_delay="0"
         app:iss_error_image="@color/red_D400"
         app:iss_period="3000"
         app:iss_placeholder="@color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toTopOf="@id/ctadonate2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/mainBackgroundupper"
@@ -29,7 +27,6 @@
         android:adjustViewBounds="true"
         android:src="@drawable/bg_cta1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,28 +34,15 @@
         android:id="@+id/mainBackgrounddown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_100sdp"
         android:adjustViewBounds="true"
         android:src="@drawable/bg_bawah_cta"
-        app:layout_constraintTop_toBottomOf="@id/mainBackgroundupper"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.712" />
 
-    <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/logo2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204" />
 
     <TextView
         android:id="@+id/welocmecta"
@@ -69,11 +53,9 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:text="Welcome"
         android:fontFamily="@font/poppins_semi_bold"
-        app:layout_constraintTop_toBottomOf="@id/logoImage"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mainBackgrounddown"
         app:layout_constraintVertical_bias="0.397" />
 
     <TextView
@@ -84,12 +66,9 @@
         android:textColor="@color/neutral_N500"
         android:fontFamily="@font/poppins_regular"
         android:text="Donate with ease, and make the world a "
-        android:layout_marginTop="@dimen/_50sdp"
         app:layout_constraintTop_toBottomOf="@id/welocmecta"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.397" />
 
     <TextView
@@ -100,12 +79,9 @@
         android:textColor="@color/neutral_N500"
         android:text="better place"
         android:fontFamily="@font/poppins_regular"
-        android:layout_marginTop="@dimen/_70sdp"
         app:layout_constraintTop_toBottomOf="@+id/ctadonate"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.397" />
 
     <FrameLayout

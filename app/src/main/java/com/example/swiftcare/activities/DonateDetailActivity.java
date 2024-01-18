@@ -70,11 +70,14 @@ public class DonateDetailActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
+        binding.backButton.setOnClickListener(v -> {
+            getOnBackPressedDispatcher().onBackPressed();
+        });
+
         binding.donateLayout.setOnClickListener(v -> {
             BottomSheetDonationFragment bottomSheetDonationFragment = new BottomSheetDonationFragment();
             bottomSheetDonationFragment.show(getSupportFragmentManager(), bottomSheetDonationFragment.getTag());
         });
-
 
         binding.icLove.setOnClickListener(v -> {
             lovePost();
@@ -134,7 +137,7 @@ public class DonateDetailActivity extends AppCompatActivity {
         bundle1.putString(Constants.KEY_DONATION_DESC, getIntent().getExtras().getString(Constants.KEY_DONATION_DESC));
         descriptionFragment.setArguments(bundle1);
         Bundle bundle2 = new Bundle();
-        bundle2.putString("title1", "title1");
+        bundle2.putString("title1", "Title 1");
         latestnewsFragment.setArguments(bundle2);
         donateDetailAdapter.addFragment(descriptionFragment);
         donateDetailAdapter.addFragment(latestnewsFragment);
