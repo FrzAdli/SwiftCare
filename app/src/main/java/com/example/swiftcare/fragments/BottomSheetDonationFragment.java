@@ -37,6 +37,15 @@ public class BottomSheetDonationFragment extends BottomSheetDialogFragment {
         cardViewList.add(binding.amount70);
         cardViewList.add(binding.amount100);
 
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            String amountText = bundle.getString("amountText", "0");
+            String contriText = bundle.getString("contriText", "0");
+
+            binding.inputAmount.setText(amountText);
+            binding.inputContribution.setText(contriText);
+        }
+
         setListeners();
 
         return binding.getRoot();
@@ -51,9 +60,20 @@ public class BottomSheetDonationFragment extends BottomSheetDialogFragment {
         }
 
         binding.continueButton.setOnClickListener(v -> {
-            dismiss();
-            BottomSheetPaymentFragment bottomSheetPaymentFragment = new BottomSheetPaymentFragment();
-            bottomSheetPaymentFragment.show(getParentFragmentManager(), bottomSheetPaymentFragment.getTag());
+            if(!binding.inputAmount.getText().toString().isEmpty()) {
+                dismiss();
+                BottomSheetPaymentFragment bottomSheetPaymentFragment = new BottomSheetPaymentFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("amountText", binding.inputAmount.getText().toString());
+                String contriText = binding.inputContribution.getText().toString();
+                bundle.putString("contriText", contriText.isEmpty() ? "0" : contriText);
+                bottomSheetPaymentFragment.setArguments(bundle);
+                bottomSheetPaymentFragment.show(getParentFragmentManager(), bottomSheetPaymentFragment.getTag());
+            } else {
+                ColorStateList colorStateList = ContextCompat.getColorStateList(requireContext(), R.color.red_D400);
+                binding.inputAmount.setHintTextColor(colorStateList);
+            }
+
         });
 
     }
@@ -75,6 +95,8 @@ public class BottomSheetDonationFragment extends BottomSheetDialogFragment {
             bgAmount.setBackgroundTintList(ColorStateList.valueOf(backgroundTint));
 
             if (cardView.getId() == clickedCardView.getId()) {
+                ColorStateList colorStateList = ContextCompat.getColorStateList(requireContext(), R.color.neutral_N500);
+                binding.inputAmount.setHintTextColor(colorStateList);
                 String amountText = cardView.getTag().toString();
                 binding.inputAmount.setText(amountText);
             }

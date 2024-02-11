@@ -16,7 +16,10 @@ import android.view.ViewGroup;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.swiftcare.R;
+import com.example.swiftcare.activities.CommunityActivity;
+import com.example.swiftcare.activities.MessageActivity;
 import com.example.swiftcare.activities.RaisefundActivity;
+import com.example.swiftcare.activities.SwiftbotActivity;
 import com.example.swiftcare.adapters.DonateAdapter;
 import com.example.swiftcare.adapters.UrgentfundAdapter;
 import com.example.swiftcare.databinding.FragmentHomeBinding;
@@ -74,18 +77,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void setListeners() {
-        binding.iconchat.setOnClickListener(v -> {
-            DialogUtils.showSimpleDialog(requireContext(), "Information", "This feature is still under development. Sorry for the inconvenience.");
-        });
-
         binding.RaiseFund.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), RaisefundActivity.class);
             intent.putExtra("data", "Hello, World!");
             startActivity(intent);
         });
 
-        binding.DataInformation.setOnClickListener(v -> {
-            DialogUtils.showSimpleDialog(requireContext(), "Information", "This feature is still under development. Sorry for the inconvenience.");
+        binding.SwiftbotAI.setOnClickListener(v -> {
+            startActivity(new Intent(requireContext(), SwiftbotActivity.class));
         });
 
         binding.DonationSchedule.setOnClickListener(v -> {
@@ -93,7 +92,11 @@ public class HomeFragment extends Fragment {
         });
 
         binding.Community.setOnClickListener(v -> {
-            DialogUtils.showSimpleDialog(requireContext(), "Information", "This feature is still under development. Sorry for the inconvenience.");
+            startActivity(new Intent(requireContext(), CommunityActivity.class));
+        });
+
+        binding.iconchat.setOnClickListener(v -> {
+            startActivity(new Intent(requireContext(), MessageActivity.class));
         });
     }
 
@@ -101,6 +104,9 @@ public class HomeFragment extends Fragment {
         CollectionReference donationRef = database.collection(Constants.KEY_COLLECTION_DONATIONS);
 
         donationRef.addSnapshotListener((value, error) -> {
+            if (!isAdded()) {
+                return;
+            }
             if (error != null) {
                 Log.e("Firestore", "Error getting donation list", error);
                 return;

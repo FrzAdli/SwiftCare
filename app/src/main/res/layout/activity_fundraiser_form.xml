@@ -1,212 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.FundraiserForm">
+    tools:context=".activities.FundraiserFormActivity">
 
-    <RelativeLayout
-        android:id="@+id/header"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:gravity="fill_horizontal"
-        android:paddingVertical="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_back"
-            app:tint="@color/neutral_N500" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/_18sdp"
-            android:layout_toEndOf="@+id/backButton"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Form Fundraiser"
-            android:textColor="@color/neutral_N500"
-            android:textSize="@dimen/_14sdp"
-            android:textStyle="bold" />
+            android:background="@color/white"
+            android:gravity="fill_horizontal"
+            android:paddingVertical="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back"
+                app:tint="@color/neutral_N500" />
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_toEndOf="@+id/backButton"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Form Fundraiser"
+                android:textColor="@color/neutral_N500"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
 
-    <RelativeLayout
-        android:id="@+id/stepper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        app:layout_constraintStart_toStartOf="parent">
+        </RelativeLayout>
 
-        <ImageView
-            android:contextClickable="false"
-            android:id="@+id/step1"
-            android:layout_width="wrap_content"
+        <HorizontalScrollView
+            android:id="@+id/hsv_1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginVertical="@dimen/_10sdp"
-            android:src="@drawable/step3" />
+            android:scrollbars="none"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/arrow1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignTop="@id/step1"
-            android:layout_alignBottom="@id/step1"
-            android:layout_toEndOf="@id/step1"
-            android:src="@drawable/arrow"/>
-    </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:orientation="horizontal">
 
-    <ScrollView
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+
+                        android:contextClickable="false"
+                        android:id="@+id/step1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/step1" />
+
+                    <ImageView
+                        android:id="@+id/arrow1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_toRightOf="@+id/step1"
+                        android:src="@drawable/arrow"/>
+
+                    <ImageView
+                        android:id="@+id/step2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@+id/arrow1"
+                        android:src="@drawable/unstep2" />
+
+                    <ImageView
+                        android:id="@+id/arrow2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_toRightOf="@+id/step2"
+                        android:src="@drawable/arrow"/>
+
+                    <ImageView
+                        android:id="@+id/step3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_toRightOf="@+id/arrow2"
+                        android:src="@drawable/unstep3" />
+
+                    <ImageView
+                        android:id="@+id/arrow3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_toRightOf="@+id/step3"
+                        android:src="@drawable/arrow"/>
+
+                    <ImageView
+                        android:id="@+id/step4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_toRightOf="@+id/arrow3"
+                        android:src="@drawable/unstep4" />
+
+                    <ImageView
+                        android:id="@+id/arrow4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_toRightOf="@+id/step4"
+                        android:src="@drawable/arrow"/>
+
+                    <ImageView
+                        android:id="@+id/step5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_toRightOf="@+id/arrow4"
+                        android:src="@drawable/unstep5" />
+
+                    <ImageView
+                        android:id="@+id/arrow5"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_toRightOf="@+id/step5"
+                        android:src="@drawable/arrow"/>
+
+                    <ImageView
+                        android:id="@+id/step6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_toRightOf="@+id/arrow5"
+                        android:src="@drawable/unstep6" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/stepper"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:scrollbars="none"
-        android:overScrollMode="never"
-        android:clipToPadding="false">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="210dp"
-            android:paddingHorizontal="20dp">
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/uploadImage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/_10sdp"
-                android:minWidth="360dp"
-                android:maxWidth="360dp"
-                android:minHeight="203dp"
-                android:maxHeight="203dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/form_image_placeholder"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/_5sdp"
-                android:text="Title"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:textSize="@dimen/_13ssp"
-                android:textColor="@color/neutral_N500"
-                android:layout_below="@id/layoutPhoto"/>
-            <EditText
-                android:id="@+id/inputTitle"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginVertical="@dimen/_5sdp"
-                android:paddingVertical="@dimen/_8sdp"
-                android:paddingHorizontal="@dimen/_15sdp"
-                android:background="@drawable/edit_text_background_stroke_300"
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="@dimen/_13ssp"
-                android:textColor="@color/neutral_N300"
-                android:maxLength="100"
-                android:hint="Write the fundraiser title"
-                android:textColorHint="@color/neutral_N50"
-                android:inputType="text"
-                android:imeOptions="actionNext" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/_5sdp"
-                android:text="Description"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:textSize="@dimen/_13ssp"
-                android:textColor="@color/neutral_N500"
-                android:layout_below="@id/layoutPhoto"/>
-            <EditText
-                android:id="@+id/inputDescription"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_80sdp"
-                android:layout_marginVertical="@dimen/_5sdp"
-                android:gravity="top"
-                android:paddingVertical="@dimen/_8sdp"
-                android:paddingHorizontal="@dimen/_15sdp"
-                android:background="@drawable/edit_text_background_stroke_300"
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="@dimen/_13ssp"
-                android:textColor="@color/neutral_N300"
-                android:maxLength="500"
-                android:hint="Write description of the fundraiser"
-                android:textColorHint="@color/neutral_N50"
-                android:inputType="textMultiLine"
-                android:imeOptions="actionNext" />
-
-            <RelativeLayout
+            <FrameLayout
+                android:id="@+id/fragmentContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:text="Volunteer"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:textSize="@dimen/_13ssp"
-                    android:textColor="@color/neutral_N500"
-                    android:layout_alignParentStart="true"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:text="optional"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:textSize="@dimen/_10ssp"
-                    android:textColor="@color/secondary_600"
-                    android:layout_alignParentEnd="true" />
+                <!-- Add your fragment dynamically to this FrameLayout -->
 
-            </RelativeLayout>
-
-
-            <EditText
-                android:id="@+id/inputVolunteer"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginVertical="@dimen/_5sdp"
-                android:paddingVertical="@dimen/_8sdp"
-                android:paddingHorizontal="@dimen/_15sdp"
-                android:background="@drawable/edit_text_background_stroke_300"
-                android:drawableEnd="@drawable/ic_paste"
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="@dimen/_13ssp"
-                android:textColor="@color/neutral_N300"
-                android:maxLength="50"
-                android:hint="Paste link form"
-                android:textColorHint="@color/neutral_N50"
-                android:inputType="text"
-                android:imeOptions="actionDone" />
+            </FrameLayout>
 
             <LinearLayout
+                android:id="@+id/buttonContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/cancelButton"
+                    android:id="@+id/backStepButton"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_40sdp"
                     android:layout_weight="1"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginVertical="@dimen/_30sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_3sdp"
                     android:text="Back"
                     android:textAllCaps="false"
                     android:textSize="@dimen/_13ssp"
@@ -216,12 +214,12 @@
                     app:backgroundTint="@color/primary_600" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/nextButton"
+                    android:id="@+id/nextStepButton"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_40sdp"
                     android:layout_weight="2"
-                    android:layout_marginVertical="@dimen/_30sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_3sdp"
                     android:text="Next Step"
                     android:textAllCaps="false"
                     android:textSize="@dimen/_13ssp"
@@ -230,10 +228,26 @@
                     android:background="@drawable/bg_round_50"
                     app:backgroundTint="@color/primary_600" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submitButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_3sdp"
+                    android:visibility="gone"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    android:background="@drawable/bg_round_50"
+                    app:backgroundTint="@color/secondary_300" />
+
             </LinearLayout>
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

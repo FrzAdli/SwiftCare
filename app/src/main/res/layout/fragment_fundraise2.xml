@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FundraiseFragment2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Recipient name"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputRecipientName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint="Write recipient name"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="text"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Phone Number"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputRecipientPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint="ex. 08*******"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="number"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Complete address"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <EditText
+                android:id="@+id/inputRecipientAddress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500"
+                android:hint="Write location address"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="textMultiLine"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Fundraising purpose"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <EditText
+                android:id="@+id/inputFundraisingPurpose"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500"
+                android:hint="Write down your goal of raising funds"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="textMultiLine"
+                android:imeOptions="actionDone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

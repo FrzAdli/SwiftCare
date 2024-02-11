@@ -154,10 +154,9 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/DonationSchedule"
+                    android:id="@+id/SwiftbotAI"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_75sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
@@ -166,18 +165,18 @@
                         android:layout_width="@dimen/_50sdp"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_8sdp"
-                        android:src="@drawable/ic_datainformation" />
+                        android:src="@drawable/ic_swiftbot" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Data\nInformation"
+                        android:text="Swiftbot AI"
                         android:gravity="center"
                         android:textSize="@dimen/_10ssp"
                         android:textColor="@color/black"
                         />
                 </LinearLayout>
                 <LinearLayout
-                    android:id="@+id/DataInformation"
+                    android:id="@+id/DonationSchedule"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"

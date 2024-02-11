@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.FormReviewActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back"
+            app:tint="@color/neutral_N500" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Dashboard"
+                android:textColor="@color/neutral_N500"
+                android:textSize="@dimen/_17ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_1sdp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:background="@drawable/bg_round_50"
+                android:backgroundTint="@color/primary_500"
+                android:text="Admin"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_70sdp"
+            android:paddingHorizontal="20dp">
+
+            <ImageView
+                android:contextClickable="false"
+                android:id="@+id/step1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/step1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Fundraiser Name"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <TextView
+                android:id="@+id/FundraiserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="ID Number"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <TextView
+                android:id="@+id/FundraiserIdNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:textColorHint="@color/neutral_N50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Phone Number"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <TextView
+                android:id="@+id/FundraiserPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Birth"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <TextView
+                android:id="@+id/FundraiserBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Email"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <TextView
+                android:id="@+id/FundraiserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Fundraiser address"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraiserAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+
+
+            <ImageView
+                android:id="@+id/step2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/step2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Recipient name"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <TextView
+                android:id="@+id/RecipientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Recipient phone number"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <TextView
+                android:id="@+id/RecipientPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Recipient address"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/RecipientAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Fundraising purpose"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraisingPurpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+
+
+            <ImageView
+                android:id="@+id/step3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/step3" />
+
+            <ImageView
+                android:id="@+id/FundraiseImage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/form_image_placeholder"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Fundraise Title"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraiseTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Description"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraiseDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Volunteer"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraiseVolunteer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+
+            <ImageView
+                android:id="@+id/step4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/step4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Nominal"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraiseNominal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Duration"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraiseDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Date Start"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraiseDateStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Date End"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/FundraiseDateEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+
+
+            <ImageView
+                android:id="@+id/step5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/step5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Account Owner Name"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/AccountOwnerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Account Number"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/AccountNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500" />
+
+
+
+            <ImageView
+                android:id="@+id/step6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/step6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Fundraising Permission Letter"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <TextView
+                android:id="@+id/PermissionLetter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:drawableEnd="@drawable/ic_download"
+                android:drawableTint="@color/primary_700"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Click to download"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/primary_700"
+                android:maxLength="500" />
+
+
+
+            <LinearLayout
+                android:id="@+id/buttonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/rejectButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_3sdp"
+                    android:text="Reject"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/red_D200"
+                    android:fontFamily="@font/poppins_medium"
+                    android:background="@drawable/bg_stroke_rounded"
+                    app:backgroundTint="@color/red_D200" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/acceptButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_3sdp"
+                    android:text="Accept"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_medium"
+                    android:background="@drawable/bg_round_50"
+                    app:backgroundTint="@color/primary_600" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/primary_600"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/progressBackground"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gradient_grey"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

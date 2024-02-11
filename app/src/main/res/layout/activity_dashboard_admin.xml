@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DashboardAdminActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Dashboard"
+                android:textColor="@color/neutral_N500"
+                android:textSize="@dimen/_17ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_1sdp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:background="@drawable/bg_round_50"
+                android:backgroundTint="@color/primary_500"
+                android:text="Admin"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ic_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/ic_logout_dashboard"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dashboard_admin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/adminProfileLayout"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:cardCornerRadius="@dimen/_30sdp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/adminProfile"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:src="@drawable/photo_profile"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello Admin"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/neutral_N500"
+            android:textSize="@dimen/_12ssp"
+            android:layout_toEndOf="@id/adminProfileLayout"
+            android:layout_alignTop="@id/adminProfileLayout"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SwiftCare"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textColor="@color/secondary_200"
+            android:textSize="@dimen/_12ssp"
+            android:layout_toEndOf="@id/adminProfileLayout"
+            android:layout_alignBottom="@id/adminProfileLayout"/>
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/logo_clean"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_10sdp"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/edit_text_background_stroke"
+        android:drawableStart="@drawable/ic_search_new"
+        android:drawablePadding="@dimen/_8sdp"
+        app:queryHint="Search fundraise"
+        app:iconifiedByDefault="false"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingTop="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:singleLine="true"
+        android:textColor="@color/primary_600"
+        android:textColorHint="@color/neutral_N60"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/profile" />
+
+    <LinearLayout
+        android:id="@+id/filterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_5sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/search_container">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/onReviewFilter"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/_7sdp"
+            app:icon="@drawable/bg_circle"
+            app:iconTint="@color/primary_600"
+            app:iconSize="@dimen/_6sdp"
+            android:text="On Review"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_8ssp"
+            android:textColor="@color/neutral_N500"
+            android:fontFamily="@font/poppins_regular"
+            android:background="@drawable/bg_round_50_active"
+            app:backgroundTint="@color/primary_50" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activeFilter"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_circle"
+            app:iconTint="@color/neutral_N50"
+            app:iconSize="@dimen/_6sdp"
+            android:text="Active"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_8ssp"
+            android:textColor="@color/neutral_N50"
+            android:fontFamily="@font/poppins_regular"
+            android:background="@drawable/bg_stroke_rounded"
+            app:backgroundTint="@color/neutral_N50" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/expiredFilter"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_7sdp"
+            app:icon="@drawable/ic_circle"
+            app:iconTint="@color/neutral_N50"
+            app:iconSize="@dimen/_6sdp"
+            android:text="Expired"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_8ssp"
+            android:textColor="@color/neutral_N50"
+            android:fontFamily="@font/poppins_regular"
+            android:background="@drawable/bg_stroke_rounded"
+            app:backgroundTint="@color/neutral_N50" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dashboardRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:padding="@dimen/_10sdp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/filterLayout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

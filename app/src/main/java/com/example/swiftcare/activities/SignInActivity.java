@@ -139,6 +139,7 @@ public class SignInActivity extends AppCompatActivity {
                             && task.getResult().getDocuments().size() > 0) {
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                        preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
                         preferenceManager.putString(Constants.KEY_USERNAME, documentSnapshot.getString(Constants.KEY_USERNAME));
                         if (documentSnapshot.contains(Constants.KEY_IMAGE_PROFILE)) {
                             preferenceManager.putString(Constants.KEY_IMAGE_PROFILE, documentSnapshot.getString(Constants.KEY_IMAGE_PROFILE));
@@ -149,12 +150,22 @@ public class SignInActivity extends AppCompatActivity {
                         if (documentSnapshot.contains(Constants.KEY_PHONE_NUMBER)) {
                             preferenceManager.putString(Constants.KEY_PHONE_NUMBER, documentSnapshot.getString(Constants.KEY_PHONE_NUMBER));
                         }
-                        showFinishDialog(true, "Verification Successfully");
-                        new Handler().postDelayed(() -> {
-                            Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
-                        }, 2000);
+                        if (documentSnapshot.contains(Constants.KEY_IS_ADMIN)) {
+                            preferenceManager.putBoolean(Constants.KEY_IS_ADMIN, true);
+                            showFinishDialog(true, "Verification Admin Successfully");
+                            new Handler().postDelayed(() -> {
+                                Intent intent = new Intent(getApplicationContext(), DashboardAdminActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            }, 2000);
+                        } else {
+                            showFinishDialog(true, "Verification Successfully");
+                            new Handler().postDelayed(() -> {
+                                Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            }, 2000);
+                        }
                     } else {
                         showFinishDialog(false, "Verification Failed");
                     }

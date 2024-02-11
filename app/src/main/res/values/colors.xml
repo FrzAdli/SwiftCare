@@ -30,6 +30,7 @@
     <color name="primary_700">#00AA4A</color>
     <color name="primary_800">#008439</color>
     <color name="secondary_200">#FDFF8A</color>
+    <color name="secondary_300">#FCFF54</color>
     <color name="secondary_500">#FBFF00</color>
     <color name="secondary_600">#E4E800</color>
     <color name="secondary_800">#8A8C00</color>
@@ -39,4 +40,5 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="gradient_white">#B3FFFFFF</color>
     <color name="gradient_grey">#73373737</color>
+    <color name="bottom_chat">#FEF7FF</color>
 </resources>
