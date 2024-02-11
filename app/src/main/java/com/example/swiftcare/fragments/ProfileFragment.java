@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -143,9 +144,9 @@ public class ProfileFragment extends Fragment {
                     String verifiedStatus = documentSnapshot.getString(Constants.KEY_VERIFIED_STATUS);
                     if (verifiedStatus.equals("Verified")) {
                         binding.verified.setText(verifiedStatus);
-                        int colorResource = getResources().getColor(R.color.primary_800);
-                        ColorStateList colorStateList = ColorStateList.valueOf(colorResource);
+                        ColorStateList colorStateList = ContextCompat.getColorStateList(requireContext(), R.color.primary_800);
                         binding.verified.setBackgroundTintList(colorStateList);
+
                         binding.badgeImageView.setImageResource(R.drawable.verified_badge);
                     }
                 } else {

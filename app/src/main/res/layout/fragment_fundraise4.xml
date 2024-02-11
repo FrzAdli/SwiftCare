@@ -4,75 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.FundraiserForm2">
-
-    <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:gravity="fill_horizontal"
-        android:paddingVertical="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_back"
-            app:tint="@color/neutral_N500" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/_18sdp"
-            android:layout_toEndOf="@+id/backButton"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Form Fundraiser"
-            android:textColor="@color/neutral_N500"
-            android:textSize="@dimen/_14sdp"
-            android:textStyle="bold" />
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/stepper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:contextClickable="false"
-            android:id="@+id/step1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginVertical="@dimen/_10sdp"
-            android:src="@drawable/steps4" />
-
-        <ImageView
-            android:id="@+id/arrow1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignTop="@id/step1"
-            android:layout_alignBottom="@id/step1"
-            android:layout_toEndOf="@id/step1"
-            android:src="@drawable/arrow"/>
-    </RelativeLayout>
+    tools:context=".fragments.FundraiseFragment4">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/stepper"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:scrollbars="none"
@@ -95,7 +32,7 @@
                 android:textColor="@color/neutral_N500"
                 android:layout_below="@id/layoutPhoto"/>
             <EditText
-                android:id="@+id/inputTitle"
+                android:id="@+id/inputNominal"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginVertical="@dimen/_5sdp"
@@ -164,46 +101,46 @@
 
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:paddingVertical="@dimen/_5sdp"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:orientation="horizontal">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/sixMonth"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1"
-                android:layout_marginEnd="@dimen/_10sdp"
-                app:icon="@drawable/ic_circle"
-                app:iconTint="@color/neutral_N500"
-                app:iconSize="@dimen/_15sdp"
-                android:text="6 month"
-                android:textAllCaps="false"
-                android:textSize="@dimen/_11ssp"
-                android:textColor="@color/neutral_N500"
-                android:fontFamily="@font/poppins_regular"
-                android:background="@drawable/bg_stroke_rounded"
-                app:backgroundTint="@color/neutral_N300" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sixMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:icon="@drawable/ic_circle"
+                    app:iconTint="@color/neutral_N500"
+                    app:iconSize="@dimen/_15sdp"
+                    android:text="6 month"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColor="@color/neutral_N500"
+                    android:fontFamily="@font/poppins_regular"
+                    android:background="@drawable/bg_stroke_rounded"
+                    app:backgroundTint="@color/neutral_N300" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/oneYear"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1"
-                android:layout_marginStart="@dimen/_10sdp"
-                app:icon="@drawable/ic_circle"
-                app:iconTint="@color/neutral_N500"
-                app:iconSize="@dimen/_15sdp"
-                android:text="one year"
-                android:textAllCaps="false"
-                android:textSize="@dimen/_11ssp"
-                android:textColor="@color/neutral_N500"
-                android:fontFamily="@font/poppins_regular"
-                android:background="@drawable/bg_stroke_rounded"
-                app:backgroundTint="@color/neutral_N300" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/oneYear"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:icon="@drawable/ic_circle"
+                    app:iconTint="@color/neutral_N500"
+                    app:iconSize="@dimen/_15sdp"
+                    android:text="one year"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColor="@color/neutral_N500"
+                    android:fontFamily="@font/poppins_regular"
+                    android:background="@drawable/bg_stroke_rounded"
+                    app:backgroundTint="@color/neutral_N300" />
 
             </LinearLayout>
 
@@ -284,44 +221,6 @@
 
 
                 </LinearLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/cancelButton"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginVertical="@dimen/_30sdp"
-                    android:text="Back"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/_13ssp"
-                    android:textColor="@color/primary_600"
-                    android:fontFamily="@font/poppins_medium"
-                    android:background="@drawable/bg_stroke_rounded"
-                    app:backgroundTint="@color/primary_600" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/submitButton"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_weight="2"
-                    android:layout_marginVertical="@dimen/_30sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:text="Submit"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/_13ssp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_medium"
-                    android:background="@drawable/bg_round_50"
-                    app:backgroundTint="@color/primary_600" />
 
             </LinearLayout>
 

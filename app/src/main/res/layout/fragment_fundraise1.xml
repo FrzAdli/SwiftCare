@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FundraiseFragment1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Name"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputFundraiserName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint="Write your name"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="text"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="ID Number"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputFundraiserIdNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint="ex. 345**********"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="number"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Phone Number"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputFundraiserPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint="ex. 08*******"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="number"
+                android:imeOptions="actionNext" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="@dimen/_10sdp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputFundraiserBirthPlace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_background_stroke_300"
+                        android:inputType="text"
+                        android:hint="Place of birth"
+                        android:text="ex. Semarang"
+                        android:textColor="@color/neutral_N300" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputFundraiserBirthDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_background_stroke_300"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:inputType="none"
+                        android:hint="Date of birth"
+                        android:text="dd/mm/yy"
+                        android:textColor="@color/neutral_N300"
+                        android:focusableInTouchMode="false"
+                        android:drawableEnd="@drawable/ic_calendar"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Email"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputFundraiserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint="example@gmail.com"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Province"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputFundraiserProvince"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint="ex. Jawa Barat"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="text"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="City"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputFundraiserCity"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint="ex. Bandung"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="text"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Subdistrict"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500" />
+            <EditText
+                android:id="@+id/inputFundraiserSubdistrict"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="100"
+                android:hint=""
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="text"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Complete address"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N500"
+                android:layout_below="@id/layoutPhoto"/>
+            <EditText
+                android:id="@+id/inputFundraiserAddress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="top"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_background_stroke_300"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/neutral_N300"
+                android:maxLength="500"
+                android:hint="Write your address"
+                android:textColorHint="@color/neutral_N50"
+                android:inputType="textMultiLine"
+                android:imeOptions="actionDone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

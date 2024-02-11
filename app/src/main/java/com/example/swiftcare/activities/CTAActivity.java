@@ -27,12 +27,16 @@ public class CTAActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         preferenceManager = new PreferenceManager(getApplicationContext());
-        if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
+        if(preferenceManager.getBoolean(Constants.KEY_IS_ADMIN)) {
+            Intent intent = new Intent(getApplicationContext(), DashboardAdminActivity.class);
+            startActivity(intent);
+            finish();
+        } else if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
             Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
             startActivity(intent);
             finish();
-
         }
+
 
         imageSlider();
         setListener();

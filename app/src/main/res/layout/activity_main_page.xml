@@ -29,8 +29,6 @@
         android:layout_alignParentBottom="true"
         android:background="@color/white">
 
-
-
         <!--suppress AndroidUnresolvableTag -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,9 +67,7 @@
                     android:textSize="18sp"
                     android:textColor="@color/white"/>
 
-
             </LinearLayout>
-
 
             <!--suppress AndroidUnresolvableTag -->
             <LinearLayout
@@ -103,7 +99,6 @@
                     android:text="Donate"
                     android:textSize="18sp"
                     android:textColor="@color/white"/>
-
 
             </LinearLayout>
 
@@ -137,8 +132,6 @@
                     android:textSize="18sp"
                     android:textColor="@color/white"/>
 
-
-
             </LinearLayout>
 
             <!--suppress AndroidUnresolvableTag -->
@@ -170,13 +163,10 @@
                     android:textSize="18sp"
                     android:textColor="@color/white"/>
 
-
             </LinearLayout>
 
-
-
-
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

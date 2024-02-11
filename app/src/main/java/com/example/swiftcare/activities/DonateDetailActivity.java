@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -81,6 +83,14 @@ public class DonateDetailActivity extends AppCompatActivity {
 
         binding.icLove.setOnClickListener(v -> {
             lovePost();
+        });
+
+        binding.chatLayout.setOnClickListener(v -> {
+            Intent i = new Intent(getApplicationContext(), ChatActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString(Constants.KEY_TARGET_ID, getIntent().getExtras().getString(Constants.KEY_FUNDRAISER_ID));
+            i.putExtras(bundle);
+            startActivity(i);
         });
     }
 
@@ -264,6 +274,7 @@ public class DonateDetailActivity extends AppCompatActivity {
                         loveListRef.child(userId).removeValue();
                     } else {
                         binding.icLove.setImageResource(R.drawable.ic_love);
+                        Toast.makeText(getApplicationContext(), "Saved to Lovelist", Toast.LENGTH_SHORT).show();
                         loveListRef.child(userId).setValue(true);
                     }
                 }
